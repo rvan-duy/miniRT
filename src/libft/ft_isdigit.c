@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   ft_isdigit.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
+/*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/15 11:58:26 by rubenz        ########   odam.nl         */
+/*   Created: 2020/10/28 10:39:36 by ruben         #+#    #+#                 */
+/*   Updated: 2020/10/29 13:30:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-size_t	ft_strlen(const char *s);
-
-#endif
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
