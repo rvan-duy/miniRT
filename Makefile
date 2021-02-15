@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/25 22:42:14 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/02/15 15:11:50 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/02/15 20:41:06 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,26 @@ FLAGS		= -Wall -Wextra -Werror -I $(HEADER)
 HEADER 		= include
 LIBFT		= libft.a
 LIBFT_DIR	= ./src/libft/
+MLX			= libmlx.a
+MLX_DIR		= ./src/minilibx_opengl/
+MLX_FLAGS	= -L. -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
+
+libmlx.a:
+	make -C	$(MLX_DIR)
+	mv $(MLX_DIR)$(MLX) . 
 
 libft.a:
 	make bonus -C $(LIBFT_DIR)
 	mv $(LIBFT_DIR)$(LIBFT) .
 
-$(NAME): $(LIBFT) $(OBJ)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT)
+$(NAME): $(LIBFT) $(MLX) $(OBJ)
+	$(CC) $(MLX_FLAGS) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT)
 
 obj/%.o: src/%.c
 	mkdir -p $(OBJ_DIRS)
-	$(CC) -I $(HEADER) $(FLAGS) -c $< -o $@
+	$(CC) -I $(HEADER) -Imlx -Ilibft -c $< -o $@
 
 .PHONY:	clean fclean re
 
