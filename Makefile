@@ -6,12 +6,13 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/25 22:42:14 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/02/15 20:41:06 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/02/16 14:37:24 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= miniRT
-FILES 		= main.c
+FILES 		= main.c \
+				colors.c
 SRC			= $(addprefix src/, $(FILES))
 OBJ 		= $(SRC:src/%.c=obj/%.o)
 OBJ_DIRS	= \
@@ -22,13 +23,13 @@ FLAGS		= -Wall -Wextra -Werror -I $(HEADER)
 HEADER 		= include
 LIBFT		= libft.a
 LIBFT_DIR	= ./src/libft/
-MLX			= libmlx.a
-MLX_DIR		= ./src/minilibx_opengl/
-MLX_FLAGS	= -L. -lmlx -framework OpenGL -framework AppKit
+MLX			= libmlx.dylib
+MLX_DIR		= ./src/mlx/
+MLX_FLAGS	= -L. -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
-libmlx.a:
+libmlx.dylib:
 	make -C	$(MLX_DIR)
 	mv $(MLX_DIR)$(MLX) . 
 
