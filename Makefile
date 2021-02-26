@@ -6,21 +6,24 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/02/24 10:55:50 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/02/26 15:26:55 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
-SRCS = main.c
+CC = gcc
+SRCS = main.c \
+		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
-OBJ = main.o
+OBJ = main.o \
+		mrt_events.o
 MLX = libmlx.a
 LIBFT = libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -Lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	rm -f *.o

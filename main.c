@@ -6,25 +6,16 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/24 10:54:58 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/26 15:28:14 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "miniRT.h"
 #include "mlx_linux/mlx.h"
 #include "libft/libft.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct  s_data {
-    void    *img;
-    char    *addr;
-    int     bit_per_pixel;
-    int     line_length;
-    int     endian;
-    int     height;
-    int     width;
-}   t_data;
 
 void    my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -34,7 +25,26 @@ void    my_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-void    draw_image(t_data *data, int color)
+void    draw_cross(t_data *img, int color)
+{
+    int x = 0;
+    int y = img->height / 2;
+
+    while (x < img->width)
+    {
+        my_mlx_pixel_put(img, x, y, color);
+        x++;
+    }
+    x = img->width / 2;
+    y = 0;
+    while (y < img->height)
+    {
+        my_mlx_pixel_put(img, x, y, color);
+        y++;
+    }
+}
+
+void    draw_waves(t_data *data, int color)
 {
     int x;
     int y;
@@ -55,39 +65,32 @@ void    draw_image(t_data *data, int color)
     }
 }
 
-int close_program(void *ptr)
-{
-    printf("Hello darkness my old friend\n");
-    exit(0);
-    return (1);
-}
-
-int key_press(int key)
-{
-    printf("key pressed: %d\n", key);
-    if (key == 65307)
-        close_program(NULL);
-    return (1);
-}
-
 int main(void)
 {
-    void *mlx;
-    void *mlx_win;
     t_data  img;
 
-    mlx = mlx_init();
-    ft_bzero(mlx, sizeof(t_data));
-    img.width = 400;
-    img.height = 400;
-    mlx_win = mlx_new_window(mlx, img.width, img.height, "Hello World");
-    img.img = mlx_new_image(mlx, img.width, img.height);
+    ft_bzero(&img, sizeof(t_data));
+    
+    // Initializing the mlx library, can return NULL if it goes wrong.
+    img.mlx = mlx_init();
+    if (!img.mlx)
+        return (0);
+
+    img.width = 1920;
+    img.height = 1080;
+    img.win = mlx_new_window(img.mlx, img.width, img.height, "Hello World");
+    img.img = mlx_new_image(img.mlx, img.width, img.height);
     img.addr = mlx_get_data_addr(img.img, &img.bit_per_pixel, &img.line_length, &img.endian);
-    draw_image(&img, 1000000);
-    mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    mlx_hook(mlx_win, 02, (1L), key_press, NULL);
-    mlx_hook(mlx_win, 17, (0L), close_program, &img);
-    mlx_loop(mlx);
+    //draw_waves(&img, 1000000);
+
+    // Hooks
+    mlx_loop_hook(img.mlx, mrt_frame_render, &img);
+    // 2: KeyPress, 1L<<0: KeyPressMask
+    mlx_hook(img.win, 2, 1L<<0, mrt_key_press, &img);
+    mlx_hook(img.win, 6, 1L<<6, mrt_mouse_motion, &img);
+
+    //mlx_hook(img.win, 17, (0L), close_program, &img);
+    mlx_loop(img.mlx);
 
     return 0;
 }
