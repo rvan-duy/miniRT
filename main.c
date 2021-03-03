@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/03 15:17:15 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/03 16:45:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "includes/miniRT.h"
 #include "mlx_linux/mlx.h"
 #include "includes/libft.h"
 #include "includes/input_check.h"
@@ -48,11 +48,13 @@ void    mrt_draw_cross(t_data *v, int color)
 int main(int argc, char **argv)
 {
     t_data  v;
+    t_vars  vars;
 
     ft_bzero(&v, sizeof(t_data));
+    ft_bzero(&vars, sizeof(t_vars));
 
     // Doing extensive input checks
-    mrt_input_check(argc, argv);
+    mrt_input_check(argc, argv, &vars);
 
     
     // Initializing the mlx library, can return NULL if it goes wrong.

@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/26 17:49:33 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/03 16:45:53 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h" // t_data & functions
+#include "includes/miniRT.h" // t_data & functions
 #include "mlx_linux/mlx.h" // mlx functions
 #include <stdio.h> // printf
 #include <stdlib.h> // exit
