@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/03 17:14:45 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/03 17:25:09 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,11 @@ $(NAME): $(OBJ)
 clean:
 	rm -f *.o
 	rm -f input_check/*.o
+	rm -f error_msg/*.o
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f a.out
 
 re: fclean all
 
