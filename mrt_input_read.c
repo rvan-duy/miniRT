@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 12:43:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/02 16:24:58 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/03 13:38:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,22 @@ int mrt_spaces_jump(char *str)
 // R (x:num) (y:num)
 int mrt_input_resolution_check(char *line, t_data *v)
 {
-    i += mrt_spaces_jump(line[i]);
-    i += mrt_input_resulution_check_read(line[i], 'w'); // 1920
-    i += mrt_spaces_jump(line[i]);
-    i += mrt_input_resulution_check_read(line[i], 'h'); // 1080
-    printf("i:%i\n", i);
-    return 1;
-};
+    char **split_string;
+
+    // check if R is already done
+    split_string = ft_split(line, ' ');
+    if (split_string[3])
+        return (-1);
+    v->r_width = ft_atoi(split_string[1]);
+    v->r_height = ft_atoi(split_string[2]);
+    printf("height:%d\nwidth:%d\n", v->r_height, v->r_width);
+    return (1);
+}
 
 int mrt_input_read(char *line, t_data *v)
 {
+    // skip spaces and tabsss
+    // als ie leeg is
     if (line[0] == 'R')
     {
         printf("Checking resolution\n");
@@ -46,7 +52,7 @@ int mrt_input_read(char *line, t_data *v)
     }
     if (line[0] == 'A')
         printf("Found Ambient..\n");
-    if (line[0] == 'c')
+    if (line[0] == 'c' && line[1] == ' ')
         printf("Found Camera..\n");
     if (line[0] == 'l')
         printf("Found Light..\n");
@@ -61,7 +67,7 @@ int mrt_input_read(char *line, t_data *v)
     if (line[0] == 't' && line[1] == 'r')
         printf("Found Triangle..\n");
     return 1;
-};
+}
 
 int main (int argc, char **argv) {
     int i;

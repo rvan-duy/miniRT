@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/03 12:53:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/03 13:06:21 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_data {
 	int		bit_per_pixel;
 	int		line_length;
 	int		endian;
-	int		height;
-	int		width;
+	int		r_height;
+	int		r_width;
 }	t_data;
 
 // Modify pixels
