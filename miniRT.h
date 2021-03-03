@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/26 15:32:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/26 17:52:30 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ typedef struct s_data {
 }	t_data;
 
 // Modify pixels
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	draw_cross(t_data *img, int color);
-void	draw_waves(t_data *data, int color);
+void	my_mlx_pixel_put(t_data *v, int x, int y, int color);
+void	mrt_draw_cross(t_data *v, int color);
 
 // Events
 int		mrt_frame_render(t_data *v);

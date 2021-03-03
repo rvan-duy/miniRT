@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/26 15:28:14 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/26 17:52:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,50 +17,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void    my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void    my_mlx_pixel_put(t_data *v, int x, int y, int color)
 {
     char *dst;
 
-    dst = data->addr + (y * data->line_length + x * (data->bit_per_pixel / 8));
+    dst = v->addr + (y * v->line_length + x * (v->bit_per_pixel / 8));
     *(unsigned int*)dst = color;
 }
 
-void    draw_cross(t_data *img, int color)
+void    mrt_draw_cross(t_data *v, int color)
 {
     int x = 0;
-    int y = img->height / 2;
+    int y = v->height / 2;
 
-    while (x < img->width)
+    while (x < v->width)
     {
-        my_mlx_pixel_put(img, x, y, color);
+        my_mlx_pixel_put(v, x, y, color);
         x++;
     }
-    x = img->width / 2;
+    x = v->width / 2;
     y = 0;
-    while (y < img->height)
+    while (y < v->height)
     {
-        my_mlx_pixel_put(img, x, y, color);
-        y++;
-    }
-}
-
-void    draw_waves(t_data *data, int color)
-{
-    int x;
-    int y;
-
-    y = 0;
-    while (y < data->height)
-    {
-        x = 0;
-        while (x < data->width)
-        {
-            if (x < data->width / 2)
-                my_mlx_pixel_put(data, x, y, color + y * x / (x + 1));
-            else
-                my_mlx_pixel_put(data, x, y, color);
-            x++;
-        }
+        my_mlx_pixel_put(v, x, y, color);
         y++;
     }
 }
@@ -81,7 +60,6 @@ int main(void)
     img.win = mlx_new_window(img.mlx, img.width, img.height, "Hello World");
     img.img = mlx_new_image(img.mlx, img.width, img.height);
     img.addr = mlx_get_data_addr(img.img, &img.bit_per_pixel, &img.line_length, &img.endian);
-    //draw_waves(&img, 1000000);
 
     // Hooks
     mlx_loop_hook(img.mlx, mrt_frame_render, &img);

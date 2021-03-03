@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/26 15:31:49 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/26 17:49:33 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int mrt_mouse_motion(int x, int y, t_data *v)
 
 int mrt_frame_render(t_data *v)
 {
-    draw_cross(v, 0xFFFFFF);
+    mrt_draw_cross(v, 0xFFFFFF);
     mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
     return (1);
 }
