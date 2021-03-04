@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_error_msg.c                                    :+:    :+:            */
+/*   mrt_resolution_parse.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/03 15:23:06 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/04 11:51:14 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/03/03 21:10:11 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/03/04 11:59:28 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> // printf
-#include <stdlib.h> // exit
+#include "../includes/miniRT.h" // t_vars
+#include "../includes/error_msg.h" // error_msg
+#include <stdio.h>
 
-void	mrt_error_msg(int line_number, char *msg)
+void    mrt_resolution_parse(char **split_line, t_vars *v, int i)
 {
-	if (line_number)
-	{
-		printf("Error\n(line:%d) %s.", line_number, msg);
-		exit(1);
-	}
-	else
-	{
-		printf("Error\n%s.\n", msg);
-		exit(1);
-	}
+    printf("1:%s\n2:%s\n", split_line[0], split_line[1]);
 }

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/03 17:13:49 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 11:54:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,9 @@
 void    mrt_input_read(int argc, char **argv, t_vars *v);
 void    mrt_argv_check(int argc, char **argv, t_vars *v);
 void    mrt_rt_file_read(t_vars *v, char *file_name);
+void    mrt_value_amount_check(char **split_line, int n);
+
+// Parsing functions
+void    mrt_resolution_parse(char *line, t_vars *v, int i);
 
 #endif
