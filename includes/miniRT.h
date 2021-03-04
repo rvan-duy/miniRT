@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/03 17:02:21 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:01:50 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ typedef struct s_data {
 
 typedef struct s_vars {
 	int		save;
+	int		r_resolution;
 	int 	r_height;
 	int		r_width;
+	int		a_ambient;
+	double	a_ratio;
+	int		a_rgb;
 }	t_vars;
 
 // Modify pixels

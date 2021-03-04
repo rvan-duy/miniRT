@@ -6,27 +6,22 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 17:44:08 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/15 14:25:56 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:58:35 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// UNNECESSARY!!!!!!
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 128
-# endif
-
-typedef struct  s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-} t_list;
+}	t_list;
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -70,18 +65,22 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
-		void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Added functions
+char	*ft_strndup(const char *s, size_t n);
+void	*ft_realloc(void *ptr, size_t count, size_t size);
+char	*ft_utoa(unsigned int n);
+double	ft_atod(char *str);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+# endif
 
 // Get_next_line
 int		gnl_len(char *buf);
 int		get_next_line(int fd, char **line);
 char	*gnl_strjoin(char *buf, char **line, int len);
 void	gnl_parsebuffer(char *str, int len);
-
-// Added functions
-char	*ft_strndup(const char *s, size_t n);
-void	*ft_realloc(void *ptr, size_t count, size_t size);
-char	*ft_utoa(unsigned int n);
 
 #endif

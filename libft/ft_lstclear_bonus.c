@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 12:24:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/22 19:30:23 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:44:04 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *tmp;
-	t_list *tmp2;
+	t_list	*tmp;
+	t_list	*tmp2;
 
 	if (!lst)
 		return ;

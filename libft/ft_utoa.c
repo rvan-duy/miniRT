@@ -6,19 +6,17 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 23:13:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:28:04 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:39:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Function converts an unigned int to a string.
-*/
+// Function converts an unsigned int to string
 
 #include "libft.h"
 
 static int	u_intlen(unsigned int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (n >= 10)
@@ -29,7 +27,7 @@ static int	u_intlen(unsigned int n)
 	return (len + 1);
 }
 
-char		*ft_utoa(unsigned int n)
+char	*ft_utoa(unsigned int n)
 {
 	char	*newstr;
 	int		i;

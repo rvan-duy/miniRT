@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:12:21 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/23 14:05:54 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:41:02 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	countwords(const char *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -46,7 +46,7 @@ static int	findstart(const char *s, char c, int i)
 
 static int	findlen(const char *s, char c, int start)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[start] != c && s[start] != '\0')
@@ -86,7 +86,7 @@ static char	**splitstr(const char *s, char c, int arraylen, char **finalstr)
 	return (finalstr);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**finalstr;
 	int		arraylen;

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/22 19:39:55 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/23 12:16:20 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:43:55 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *newlist;
-	t_list *tmp;
+	t_list	*newlist;
+	t_list	*tmp;
 
 	if (!lst)
 		return (NULL);

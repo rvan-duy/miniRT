@@ -6,15 +6,15 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/02 14:31:09 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/12/15 17:09:13 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:37:49 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-int		gnl_len(char *str)
+int	gnl_len(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && str[i] != '\n')
@@ -52,7 +52,7 @@ char	*gnl_strjoin(char *buf, char **line, int len)
 
 void	gnl_parsebuffer(char *str, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[len])

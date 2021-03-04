@@ -6,7 +6,7 @@
 /*   By: rvan-duy <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 17:37:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2020/11/19 21:41:55 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:42:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

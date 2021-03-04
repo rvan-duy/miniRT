@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/04 12:03:59 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/04 14:02:31 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRCS = main.c \
 		input_check/mrt_rt_file_read.c \
 		input_check/mrt_parse_utils.c \
 		input_check/mrt_resolution_parse.c \
+		input_check/mrt_ambient_parse.c \
+		colors/mrt_rgb_create.c \
 		error_msg/mrt_error_msg.c
 FLAGS = -Wall -Wextra -Werror
 OBJ = $(SRCS:%.c=%.o)

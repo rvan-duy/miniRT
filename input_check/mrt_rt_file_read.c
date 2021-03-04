@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 17:05:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/04 12:06:35 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:02:14 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void mrt_line_parse(char *line, t_vars *v, int i)
     else if (!ft_strncmp(split_line[0], "R", 2))
         mrt_resolution_parse(split_line + 1, v, i);
     else if (!ft_strncmp(split_line[0], "A", 2))
-        printf("ambient found\n");
+        mrt_ambient_parse(split_line + 1, v, i);
     else if (!ft_strncmp(split_line[0], "c", 2))
         printf("camera found\n");
     else if (!ft_strncmp(split_line[0], "l", 2))

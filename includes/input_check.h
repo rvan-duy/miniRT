@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/04 12:25:35 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/04 14:04:56 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void    mrt_value_amount_check(char **split_line, int n);
 
 // Parsing functions
 int     mrt_arr_size_check(char **arr);
-void    mrt_resolution_parse(char **line, t_vars *v, int i);
+void    mrt_resolution_parse(char **split_line, t_vars *v, int i);
+void    mrt_ambient_parse(char **split_line, t_vars *v, int i);
 
 #endif
