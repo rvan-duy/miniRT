@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/04 14:01:50 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 15:51:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,33 @@ typedef struct s_data {
 	int		r_width;
 }	t_data;
 
+// Resolution object
+typedef struct s_res {
+	int		status;
+	int		height;
+	int		width;
+}	t_res;
+
+// Ambient object
+typedef struct s_ambient {
+	int		status;
+	double	ratio;
+	int		rgb;
+}	t_ambient;
+
+// Camera object
+typedef struct s_camera {
+	int		status;
+	double	x;
+	double	y;
+	double	z;
+}	t_camera;
+
 typedef struct s_vars {
-	int		save;
-	int		r_resolution;
-	int 	r_height;
-	int		r_width;
-	int		a_ambient;
-	double	a_ratio;
-	int		a_rgb;
+	int			save;
+	t_res		*res;
+	t_ambient	*ambient;
+	t_camera	*cam;
 }	t_vars;
 
 // Modify pixels
