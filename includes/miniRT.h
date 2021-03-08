@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 17:35:39 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 20:09:04 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # define TRUE 1
 # define FALSE 0
+
+# include "libft.h"
 
 // Main struct to store all data in
 typedef struct s_data {
@@ -52,15 +54,15 @@ typedef struct s_coords {
 
 // Camera object
 typedef struct s_camera {
-	t_coords		*coords;
-	struct s_camera	*next;
+	t_coords		coords;
+	int				fov;
 }	t_camera;
 
 typedef struct s_vars {
 	int			save;
-	t_res		*res;
-	t_ambient	*ambient;
-	t_camera	*cam;
+	t_res		res;
+	t_ambient	ambient;
+	t_list		*cam;
 }	t_vars;
 
 // Modify pixels

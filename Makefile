@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/08 17:32:57 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/08 20:07:55 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ clean:
 	rm -f *.o
 	rm -f input_check/*.o
 	rm -f error_msg/*.o
+	rm -f struct_init/*.o
 
 fclean: clean
 	rm -f $(NAME)
