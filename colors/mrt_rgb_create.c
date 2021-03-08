@@ -6,37 +6,50 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 15:17:54 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/04 15:36:22 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 12:19:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_vars
-#include "../includes/libft.h" // atoi
-#include <stdio.h>
+#include "../includes/libft.h" // atoi isdigit
+#include "../includes/error_msg.h" // error_msg
+#include "../includes/input_check.h" // arr_size_check
 
-// input 255,255,255
-// output 0xFFFFFF
-
-static int  numbers_jump(char *str, int i)
+static void	mrt_rgb_isdigit_check(char **split_line, int size, int line)
 {
-    while (str[i] >= '0' && str[i] <= '9')
-        i++;
-    return (i);
+	int	i;
+	int	y;
+
+	i = 0;
+	while (split_line[i])
+	{
+		y = 0;
+		while (split_line[i][y])
+		{
+			if (!ft_isdigit(split_line[i][y]))
+				mrt_error_msg(line, "Cannot recognize RGB code");
+			y++;
+		}
+		i++;
+	}
 }
 
-int mrt_rgb_create(char *str)
+int	mrt_rgb_create(char *str, int i)
 {
-    int red;
-    int green;
-    int blue;
-    int i;
+	int		red;
+	int		green;
+	int		blue;
+	int		size;
+	char	**split_line;
 
-    i = 0;
-    red = ft_atoi(str);    
-    i = numbers_jump(str, i);
-    green = ft_atoi(str + i);
-    i = numbers_jump(str, i);
-    blue = ft_atoi(str + i);
-    printf("red:%X - green:%X - blue:%X\n", red, green, blue);
-    return (red << 16 | green << 8 | blue);
+	split_line = ft_split(str, ',');
+	size = mrt_arr_size_check(split_line);
+	if (size != 3)
+		mrt_error_msg(i, "Cannot recognize RGB code");
+	mrt_rgb_isdigit_check(split_line, size, i);
+	red = ft_atoi(split_line[0]);
+	green = ft_atoi(split_line[1]);
+	blue = ft_atoi(split_line[2]);
+	if (red > 255 || green > 255 || blue > 255)
+		mrt_error_msg(i, "Wrong color value(s), must be between 0-255");
+	return (red << 16 | green << 8 | blue);
 }
