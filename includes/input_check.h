@@ -6,14 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 15:58:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 16:18:47 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INPUT_CHECK_H
 # define INPUT_CHECK_H
 
-#include "miniRT.h" // t_vars
+#include "miniRT.h" // t_vars t_coords
 
 void    mrt_input_check(int argc, char **argv, t_vars *v);
 void    mrt_input_read(int argc, char **argv, t_vars *v);
@@ -28,5 +28,6 @@ void    mrt_camera_parse(char **split_line, t_vars *v, int line);
 // Utilities
 int     mrt_arr_size_check(char **arr);
 int     mrt_rgb_create(char *str, int line);
+void    mrt_coords_create(char *str, t_coords *c, int line);
 
 #endif

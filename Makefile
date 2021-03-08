@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/08 15:59:00 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/08 16:02:16 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ clean:
 	rm -f *.o
 	rm -f input_check/*.o
 	rm -f error_msg/*.o
-	rm -f colors/*.o
 
 fclean: clean
 	rm -f $(NAME)

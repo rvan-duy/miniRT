@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 15:52:04 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 16:35:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,14 @@ int main(int argc, char **argv)
     t_vars  vars;
 
     // Initializing needs to be redone
-    ft_bzero(&v, sizeof(t_data));
+    //vars = ft_calloc(1, sizeof(t_vars));
+    /*ft_bzero(&v, sizeof(t_data));
     ft_bzero(&vars, sizeof(t_vars));
     vars.res = malloc(sizeof(t_res));
     vars.ambient = malloc(sizeof(t_ambient));
     vars.cam = malloc(sizeof(t_camera));
+    vars.coords = malloc(sizeof(t_coords));
+    vars.coords.*/
 
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);

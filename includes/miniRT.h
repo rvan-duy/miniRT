@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 15:51:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 16:48:04 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,16 @@ typedef struct s_ambient {
 	int		rgb;
 }	t_ambient;
 
+// Coordinates object
+typedef struct s_coords {
+	double x;
+	double y;
+	double z;
+} t_coords;
+
 // Camera object
 typedef struct s_camera {
-	int		status;
-	double	x;
-	double	y;
-	double	z;
+	t_coords	*coords;
 }	t_camera;
 
 typedef struct s_vars {
