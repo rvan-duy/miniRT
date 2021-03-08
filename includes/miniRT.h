@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 16:48:04 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 17:35:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ typedef struct s_coords {
 
 // Camera object
 typedef struct s_camera {
-	t_coords	*coords;
+	t_coords		*coords;
+	struct s_camera	*next;
 }	t_camera;
 
 typedef struct s_vars {

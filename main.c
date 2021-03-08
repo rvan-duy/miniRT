@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 16:35:07 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 17:53:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "mlx_linux/mlx.h"
 #include "includes/libft.h"
 #include "includes/input_check.h"
+#include "includes/struct_init.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,7 +52,7 @@ int main(int argc, char **argv)
     t_vars  vars;
 
     // Initializing needs to be redone
-    //vars = ft_calloc(1, sizeof(t_vars));
+    mrt_vars_init(&vars);
     /*ft_bzero(&v, sizeof(t_data));
     ft_bzero(&vars, sizeof(t_vars));
     vars.res = malloc(sizeof(t_res));
@@ -61,9 +62,9 @@ int main(int argc, char **argv)
     vars.coords.*/
 
     // Doing extensive input checks
+    printf("hi\n");
     mrt_input_check(argc, argv, &vars);
 
-    
     // Initializing the mlx library, can return NULL if it goes wrong.
     /*img.mlx = mlx_init();
     if (!img.mlx)
