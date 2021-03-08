@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 20:43:17 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 22:13:42 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int main(int argc, char **argv)
     vars.coords.*/
 
     // Doing extensive input checks
-    printf("hi\n");
     mrt_input_check(argc, argv, &vars);
 
     // Initializing the mlx library, can return NULL if it goes wrong.

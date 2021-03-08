@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 20:32:36 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 21:57:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,23 @@ typedef struct s_ambient {
 
 // Coordinates object
 typedef struct s_coords {
-	double x;
-	double y;
-	double z;
-} t_coords;
+	double	x;
+	double	y;
+	double	z;
+}	t_coords;
+
+// 3d normalized orientation vector object
+typedef struct s_vector {
+	float	x;
+	float	y;
+	float	z;
+}	t_vector;
 
 // Camera object
 typedef struct s_camera {
-	t_coords		coords;
-	int				fov;
+	t_coords	coords;
+	t_vector	vector;
+	int			fov;
 }	t_camera;
 
 typedef struct s_vars {
