@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 20:09:04 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 20:32:36 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define TRUE 1
 # define FALSE 0
 
-# include "libft.h"
+# include "libft.h" // t_list
 
 // Main struct to store all data in
 typedef struct s_data {

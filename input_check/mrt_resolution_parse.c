@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 21:10:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 15:22:08 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/08 20:39:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	mrt_resolution_parse(char **split_line, t_vars *v, int line)
 {
 	int	size;
 
-	if (v->res->status)
+	if (v->res.status)
 		mrt_error_msg(line, "Resolution already exists");
 	size = mrt_arr_size_check(split_line);
 	if (size > 2)
 		mrt_error_msg(line, "Too many values for resolution");
 	if (size < 2)
 		mrt_error_msg(line, "Not enough values for resolution");
-	v->res->width = ft_atoi(split_line[0]);
-	v->res->height = ft_atoi(split_line[1]);
-	v->res->status = TRUE;
+	v->res.width = ft_atoi(split_line[0]);
+	v->res.height = ft_atoi(split_line[1]);
+	v->res.status = TRUE;
 }
