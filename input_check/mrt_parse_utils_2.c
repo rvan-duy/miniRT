@@ -6,14 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 22:22:15 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 00:16:24 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_vector
+#include "../includes/miniRT.h" // t_coords t_vector
 #include "../includes/error_msg.h" // error_msg
+#include "../includes/libft.h" // atoi atod
 #include "../includes/input_check.h" // arr_size_check
-#include <stdio.h>
 
 static void	mrt_arr_isdigit_check(char **split_str, int size, int line)
 {
@@ -69,4 +69,25 @@ void	mrt_vector_create(char *str, t_vector *v, int line)
 	v->z = ft_atod(split_str[2]);
 	if (v->x > 1 || v->y > 1 || v->z > 1 || v->x < -1 || v->y < -1 || v->z < -1)
 		mrt_error_msg(line, "Invalid vector value(s), must be in range [-1,1]");
+}
+
+int	mrt_fov_create(char *str, int line)
+{
+	int	fov;
+
+	fov = ft_atoi(str);
+	if (fov < 0 || fov > 180)
+		mrt_error_msg(line, "Invalid field of view value, \
+		 must be in range [0,180]");
+	return (fov);
+}
+
+float	mrt_ratio_create(char *str, int line)
+{
+	float	ratio;
+
+	ratio = ft_atod(str);
+	if (ratio < 0 || ratio > 1)
+		mrt_error_msg(line, "Invalid ratio value, must be in range [0.0,1.0]");
+	return (ratio);
 }
