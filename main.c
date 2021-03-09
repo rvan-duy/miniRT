@@ -6,12 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 22:13:42 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 12:11:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/miniRT.h"
-#include "mlx_linux/mlx.h"
+//#include "mlx_linux/mlx.h"
+#include "mlx/mlx.h"
 #include "includes/libft.h"
 #include "includes/input_check.h"
 #include "includes/struct_init.h"
@@ -48,7 +49,7 @@ void    mrt_draw_cross(t_data *v, int color)
 
 int main(int argc, char **argv)
 {
-    t_data  v;
+    //t_data  v;
     t_vars  vars;
 
     // Initializing needs to be redone
@@ -60,6 +61,7 @@ int main(int argc, char **argv)
     vars.cam = malloc(sizeof(t_camera));
     vars.coords = malloc(sizeof(t_coords));
     vars.coords.*/
+    
 
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);

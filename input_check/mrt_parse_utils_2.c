@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 00:16:24 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 12:33:46 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,29 @@ static void	mrt_arr_isdigit_check(char **split_str, int size, int line)
 	}
 }
 
+void	mrt_comma_check(char *str, int line)
+{
+	int	i;
+	int	commacount;
+
+	i = 0;
+	commacount = 0;
+	while (str[i])
+	{
+		if (str[i] == ',')
+			commacount++;
+		i++;
+	}
+	if (commacount != 2)
+		mrt_error_msg(line, "Too many commas used");
+}
+
 void	mrt_coords_create(char *str, t_coords *c, int line)
 {
 	char	**split_str;
 	int		size;
 
+	mrt_comma_check(str, line);
 	split_str = ft_split(str, ',');
 	if (!split_str)
 		mrt_error_msg(line, "Unable to allocate memory");
@@ -57,6 +75,7 @@ void	mrt_vector_create(char *str, t_vector *v, int line)
 	char	**split_str;
 	int		size;
 
+	mrt_comma_check(str, line);
 	split_str = ft_split(str, ',');
 	if (!split_str)
 		mrt_error_msg(line, "Unable to allocate memory");
@@ -80,14 +99,4 @@ int	mrt_fov_create(char *str, int line)
 		mrt_error_msg(line, "Invalid field of view value, \
 		 must be in range [0,180]");
 	return (fov);
-}
-
-float	mrt_ratio_create(char *str, int line)
-{
-	float	ratio;
-
-	ratio = ft_atod(str);
-	if (ratio < 0 || ratio > 1)
-		mrt_error_msg(line, "Invalid ratio value, must be in range [0.0,1.0]");
-	return (ratio);
 }

@@ -6,12 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 21:18:05 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 22:19:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 12:34:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/miniRT.h" // t_coords
 #include "../includes/libft.h" // atoi atod isdigit split
+#include "../includes/input_check.h" // comma_check
 #include "../includes/error_msg.h" // error_msg
 
 int	mrt_arr_size_check(char **arr)
@@ -51,6 +52,7 @@ int	mrt_rgb_create(char *str, int line)
 	int		size;
 	char	**split_str;
 
+	mrt_comma_check(str, line);
 	split_str = ft_split(str, ',');
 	if (!split_str)
 		mrt_error_msg(line, "Unable to allocate memory");
@@ -64,4 +66,14 @@ int	mrt_rgb_create(char *str, int line)
 	if (red > 255 || green > 255 || blue > 255)
 		mrt_error_msg(line, "Invalid color value(s), must be in range [0-255]");
 	return (red << 16 | green << 8 | blue);
+}
+
+float	mrt_ratio_create(char *str, int line)
+{
+	float	ratio;
+
+	ratio = ft_atod(str);
+	if (ratio < 0 || ratio > 1)
+		mrt_error_msg(line, "Invalid ratio value, must be in range [0.0,1.0]");
+	return (ratio);
 }

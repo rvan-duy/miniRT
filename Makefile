@@ -6,14 +6,13 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/08 22:00:28 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/09 12:10:02 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
 CC = gcc
 SRCS = main.c \
-		mrt_events.c \
 		input_check/mrt_input_check.c \
 		input_check/mrt_argv_check.c \
 		input_check/mrt_rt_file_read.c \
@@ -24,15 +23,19 @@ SRCS = main.c \
 		input_check/mrt_camera_parse.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror $(UNUSED)
+UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
 OBJ = $(SRCS:%.c=%.o)
 MLX = libmlx.a
 LIBFT = libft.a
 
 all: $(NAME)
 
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
+
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -Llibft -lft -lm -lz -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	rm -f *.o
