@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 21:57:39 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 13:36:10 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_res {
 // Ambient object
 typedef struct s_ambient {
 	int		status;
-	double	ratio;
+	float	ratio;
 	int		rgb;
 }	t_ambient;
 
@@ -59,6 +59,13 @@ typedef struct s_vector {
 	float	z;
 }	t_vector;
 
+// Light object
+typedef struct s_light {
+	t_coords	coords;
+	float		ratio;
+	int			rgb;
+}	t_light;
+
 // Camera object
 typedef struct s_camera {
 	t_coords	coords;
@@ -71,6 +78,7 @@ typedef struct s_vars {
 	t_res		res;
 	t_ambient	ambient;
 	t_list		*cam;
+	t_list		*light;
 }	t_vars;
 
 // Modify pixels

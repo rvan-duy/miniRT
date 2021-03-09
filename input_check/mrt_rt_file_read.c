@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 17:05:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 17:52:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 13:43:45 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,55 +19,55 @@
 
 static void mrt_line_parse(char *line, t_vars *v, int i)
 {
-    char **split_line;
+	char **split_line;
 
-    split_line = ft_split(line, ' ');
-    if (!split_line)
-        mrt_error_msg(i, "Unable to allocate memory");
-    if (!split_line[0])
-        (void)NULL;
-    else if (!ft_strncmp(split_line[0], "R", 2))
-        mrt_resolution_parse(split_line + 1, v, i);
-    else if (!ft_strncmp(split_line[0], "A", 2))
-        mrt_ambient_parse(split_line + 1, v, i);
-    else if (!ft_strncmp(split_line[0], "c", 2))
-        mrt_camera_parse(split_line + 1, v, i);
-    else if (!ft_strncmp(split_line[0], "l", 2))
-        printf("light found\n");
-    else if (!ft_strncmp(split_line[0], "sp", 3))
-        printf("sphere found\n");
-    else if (!ft_strncmp(split_line[0], "pl", 3))
-        printf("plane found\n");
-    else if (!ft_strncmp(split_line[0], "sq", 3))
-        printf("square found\n");
-    else if (!ft_strncmp(split_line[0], "cy", 3))
-        printf("cylinder found\n");
-    else if (!ft_strncmp(split_line[0], "tr", 3))
-        printf("triangle found\n");
-    //printf("we free stuff now\n");
+	split_line = ft_split(line, ' ');
+	if (!split_line)
+		mrt_error_msg(i, "Unable to allocate memory");
+	if (!split_line[0])
+		(void)NULL;
+	else if (!ft_strncmp(split_line[0], "R", 2))
+		mrt_resolution_parse(split_line + 1, v, i);
+	else if (!ft_strncmp(split_line[0], "A", 2))
+		mrt_ambient_parse(split_line + 1, v, i);
+	else if (!ft_strncmp(split_line[0], "c", 2))
+		mrt_camera_parse(split_line + 1, v, i);
+	else if (!ft_strncmp(split_line[0], "l", 2))
+		mrt_light_parse(split_line + 1, v, i);
+	else if (!ft_strncmp(split_line[0], "sp", 3))
+		printf("sphere found\n");
+	else if (!ft_strncmp(split_line[0], "pl", 3))
+		printf("plane found\n");
+	else if (!ft_strncmp(split_line[0], "sq", 3))
+		printf("square found\n");
+	else if (!ft_strncmp(split_line[0], "cy", 3))
+		printf("cylinder found\n");
+	else if (!ft_strncmp(split_line[0], "tr", 3))
+		printf("triangle found\n");
+	//printf("we free stuff now\n");
 }
 
 void    mrt_rt_file_read(t_vars *v, char *file_name)
 {
-    int ret;
-    int fd;
-    int i;
-    char *line;
+	int ret;
+	int fd;
+	int i;
+	char *line;
 
-    fd = open(file_name, O_RDONLY);
-    if (fd < 0)
-        mrt_error_msg(0, "unable to open \".rt\" file");
-    ret = 1;
-    i = 1;
-    while (ret == 1)
-    {
-        ret = get_next_line(fd, &line);
-        if (ret == -1)
-            mrt_error_msg(0, "something went wrong with get_next_line");
-        mrt_line_parse(line, v, i);
-        // function to check and read the line in
-        // need a new struct for this?
-        free(line); // make sure this is not double included
-        i++;
-    }
+	fd = open(file_name, O_RDONLY);
+	if (fd < 0)
+		mrt_error_msg(0, "unable to open \".rt\" file");
+	ret = 1;
+	i = 1;
+	while (ret == 1)
+	{
+		ret = get_next_line(fd, &line);
+		if (ret == -1)
+			mrt_error_msg(0, "something went wrong with get_next_line");
+		mrt_line_parse(line, v, i);
+		// function to check and read the line in
+		// need a new struct for this?
+		free(line); // make sure this is not double included
+		i++;
+	}
 }

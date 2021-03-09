@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 16:39:03 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/08 22:02:15 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 13:38:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void    mrt_vars_init(t_vars *v)
     v->ambient.ratio = 0;
     v->ambient.rgb = -1;
     v->cam = malloc(sizeof(t_list)); //protec
-    
+    v->light = malloc (sizeof(t_list)); //protec
 }

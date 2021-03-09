@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 12:33:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 13:42:12 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../includes/libft.h" // atoi atod
 #include "../includes/input_check.h" // arr_size_check
 
-static void	mrt_arr_isdigit_check(char **split_str, int size, int line)
+static void	mrt_arr_isdigit_check(char **split_str, int line)
 {
 	int	i;
 	int	y;
@@ -64,7 +64,7 @@ void	mrt_coords_create(char *str, t_coords *c, int line)
 	size = mrt_arr_size_check(split_str);
 	if (size != 3)
 		mrt_error_msg(line, "Cannot recognize coordinates");
-	mrt_arr_isdigit_check(split_str, size, line);
+	mrt_arr_isdigit_check(split_str, line);
 	c->x = ft_atod(split_str[0]);
 	c->y = ft_atod(split_str[1]);
 	c->z = ft_atod(split_str[2]);
@@ -82,7 +82,7 @@ void	mrt_vector_create(char *str, t_vector *v, int line)
 	size = mrt_arr_size_check(split_str);
 	if (size != 3)
 		mrt_error_msg(line, "Cannot recognize vector orientation");
-	mrt_arr_isdigit_check(split_str, size, line);
+	mrt_arr_isdigit_check(split_str, line);
 	v->x = ft_atod(split_str[0]);
 	v->y = ft_atod(split_str[1]);
 	v->z = ft_atod(split_str[2]);

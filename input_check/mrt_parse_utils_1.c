@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 21:18:05 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 12:34:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 13:41:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	mrt_arr_size_check(char **arr)
 	return (i);
 }
 
-static void	mrt_rgb_isdigit_check(char **split_str, int size, int line)
+static void	mrt_rgb_isdigit_check(char **split_str, int line)
 {
 	int	i;
 	int	y;
@@ -59,7 +59,7 @@ int	mrt_rgb_create(char *str, int line)
 	size = mrt_arr_size_check(split_str);
 	if (size != 3)
 		mrt_error_msg(line, "Cannot recognize RGB code");
-	mrt_rgb_isdigit_check(split_str, size, line);
+	mrt_rgb_isdigit_check(split_str, line);
 	red = ft_atoi(split_str[0]);
 	green = ft_atoi(split_str[1]);
 	blue = ft_atoi(split_str[2]);
