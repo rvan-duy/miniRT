@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/09 13:40:14 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/09 15:55:06 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,10 @@ SRCS = main.c \
 		input_check/mrt_ambient_parse.c \
 		input_check/mrt_camera_parse.c \
 		input_check/mrt_light_parse.c \
+		input_check/mrt_sphere_parse.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror $(UNUSED)
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
 OBJ = $(SRCS:%.c=%.o)
 MLX = libmlx.a

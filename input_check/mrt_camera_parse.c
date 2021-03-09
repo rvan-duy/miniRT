@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 13:05:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 13:38:55 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 16:14:24 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	mrt_camera_parse(char **split_line, t_vars *v, int line)
 	t_camera	*cam;
 	t_list		*node;
 
-	cam = malloc(sizeof(t_camera));
+	cam = malloc(sizeof(t_camera)); // protec
 	size = mrt_arr_size_check(split_line);
 	if (size > 3)
 		mrt_error_msg(line, "Too many values for camera");

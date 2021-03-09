@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 13:36:10 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/09 15:58:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,13 @@ typedef struct s_camera {
 	t_vector	vector;
 	int			fov;
 }	t_camera;
+
+// Sphere object
+typedef struct	s_sphere {
+	t_coords	coords;
+	double		diameter;
+	int			rgb;
+}	t_sphere;
 
 typedef struct s_vars {
 	int			save;
