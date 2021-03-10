@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 17:05:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 15:42:14 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 14:49:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void mrt_line_parse(char *line, t_vars *v, int i)
 	else if (!ft_strncmp(split_line[0], "sp", 3))
 		mrt_sphere_parse(split_line + 1, v, i);
 	else if (!ft_strncmp(split_line[0], "pl", 3))
-		printf("plane found\n");
+		mrt_plane_parse(split_line + 1, v, i);
 	else if (!ft_strncmp(split_line[0], "sq", 3))
 		printf("square found\n");
 	else if (!ft_strncmp(split_line[0], "cy", 3))

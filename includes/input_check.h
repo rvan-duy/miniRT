@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 12:52:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 15:07:30 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void    mrt_ambient_parse(char **split_line, t_vars *v, int line);
 void    mrt_camera_parse(char **split_line, t_vars *v, int line);
 void    mrt_light_parse(char **split_line, t_vars *v, int line);
 void    mrt_sphere_parse(char **split_line, t_vars *v, int line);
+void    mrt_plane_parse(char **split_line, t_vars *v, int line);
+void	mrt_square_parse(char **split_line, t_vars *v, int line);
 
 // Utilities
 int     mrt_arr_size_check(char **arr);
@@ -36,5 +38,6 @@ void    mrt_coords_create(char *str, t_coords *c, int line);
 void    mrt_vector_create(char *str, t_vector *v, int line);
 void    mrt_fov_create(char *str, int *fov, int line);
 void    mrt_diameter_create(char *str, double *diameter, int line);
+void    mrt_size_create(char *str, double *size, int line);
 
 #endif

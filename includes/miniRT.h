@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 12:48:41 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 15:06:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ typedef struct s_coords {
 
 // 3d normalized orientation vector object
 typedef struct s_vector {
-	float	x;
-	float	y;
-	float	z;
+	double	x;
+	double	y;
+	double	z;
 }	t_vector;
 
 // Light object
@@ -80,6 +80,21 @@ typedef struct	s_sphere {
 	int			rgb;
 }	t_sphere;
 
+// Plane object
+typedef struct	s_plane {
+	t_coords	coords;
+	t_vector	vector;
+	int			rgb;
+}	t_plane;
+
+// Square object
+typedef struct	s_square {
+	t_coords	coords;
+	t_vector	vector;
+	double		size;
+	int			rgb;
+}	t_square;
+
 typedef struct s_vars {
 	int			save;
 	t_res		res;
@@ -87,6 +102,8 @@ typedef struct s_vars {
 	t_list		*cam;
 	t_list		*light;
 	t_list		*sphere;
+	t_list		*plane;
+	t_list		*square;
 }	t_vars;
 
 // Modify pixels

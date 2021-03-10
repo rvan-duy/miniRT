@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 16:39:03 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 11:58:01 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 14:57:20 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,6 @@ void    mrt_vars_init(t_vars *v)
     v->cam = malloc(sizeof(t_list)); //protec
     v->light = malloc(sizeof(t_list)); //protec
     v->sphere = malloc(sizeof(t_list)); //protec
+    v->plane = malloc(sizeof(t_list)); //protec
+    v->square = malloc(sizeof(t_list)); //protec
 }

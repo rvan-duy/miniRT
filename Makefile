@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/10 12:54:55 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/10 15:07:53 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,14 @@ SRCS = main.c \
 		input_check/mrt_rt_file_read.c \
 		input_check/mrt_parse_utils_1.c \
 		input_check/mrt_parse_utils_2.c \
+		input_check/mrt_parse_utils_3.c \
 		input_check/mrt_resolution_parse.c \
 		input_check/mrt_ambient_parse.c \
 		input_check/mrt_camera_parse.c \
 		input_check/mrt_light_parse.c \
 		input_check/mrt_sphere_parse.c \
+		input_check/mrt_plane_parse.c \
+		input_check/mrt_square_parse.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c
 FLAGS = -Wall -Wextra -Werror
