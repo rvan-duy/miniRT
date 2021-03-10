@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 21:18:05 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 16:09:12 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 12:51:53 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,20 +68,16 @@ int	mrt_rgb_create(char *str, int line)
 	return (red << 16 | green << 8 | blue);
 }
 
-float	mrt_ratio_create(char *str, int line)
+void	mrt_ratio_create(char *str,	double *ratio, int line)
 {
-	int ratio;
-
-	ratio = ft_atod(str);
-	if (ratio < 0 || ratio > 1)
+	*ratio = ft_atod(str);
+	if (*ratio < 0 || *ratio > 1)
 		mrt_error_msg(line, "Invalid ratio value, must be in range [0.0,1.0]");
-	return (ratio);
 }
 
-double	mrt_diameter_create(char *str, int line)
+void	mrt_diameter_create(char *str, double *diameter, int line)
 {
 	int		i;
-	double	diameter;
 
 	i = 0;
 	while (str[i])
@@ -90,6 +86,5 @@ double	mrt_diameter_create(char *str, int line)
 			mrt_error_msg(line, "Cannot recognize diameter");
 		i++;
 	}
-	diameter = ft_atod(str);
-	return (diameter);
+	*diameter = ft_atod(str);
 }

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 21:10:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 00:08:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 13:01:41 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	mrt_resolution_parse(char **split_line, t_vars *v, int line)
 		mrt_error_msg(line, "Too many values for resolution");
 	if (size < 2)
 		mrt_error_msg(line, "Not enough values for resolution");
-	v->res.width = ft_atoi(split_line[0]);
+	v->res.width = ft_atoi(split_line[0]); // these need to be seperate functions
 	v->res.height = ft_atoi(split_line[1]); // does this have a max???
 	v->res.status = TRUE;
 }

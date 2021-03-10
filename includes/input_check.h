@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 16:10:34 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 12:52:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void    mrt_sphere_parse(char **split_line, t_vars *v, int line);
 int     mrt_arr_size_check(char **arr);
 void    mrt_comma_check(char *str, int line);
 int     mrt_rgb_create(char *str, int line);
-float   mrt_ratio_create(char *str, int line);
+void    mrt_ratio_create(char *str, double *ratio, int line);
 void    mrt_coords_create(char *str, t_coords *c, int line);
 void    mrt_vector_create(char *str, t_vector *v, int line);
-int     mrt_fov_create(char *str, int line);
-double  mrt_diameter_create(char *str, int line);
+void    mrt_fov_create(char *str, int *fov, int line);
+void    mrt_diameter_create(char *str, double *diameter, int line);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 13:05:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 16:14:24 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 12:58:16 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	mrt_camera_parse(char **split_line, t_vars *v, int line)
 	t_camera	*cam;
 	t_list		*node;
 
-	cam = malloc(sizeof(t_camera)); // protec
+	cam = malloc(sizeof(t_camera));
+	if (!cam)
+		mrt_error_msg(line, "Unable to allocate memory");
 	size = mrt_arr_size_check(split_line);
 	if (size > 3)
 		mrt_error_msg(line, "Too many values for camera");
@@ -28,7 +30,7 @@ void	mrt_camera_parse(char **split_line, t_vars *v, int line)
 		mrt_error_msg(line, "Not enough values for camera");
 	mrt_coords_create(split_line[0], &cam->coords, line);
 	mrt_vector_create(split_line[1], &cam->vector, line);
-	cam->fov = mrt_fov_create(split_line[2], line);
+	mrt_fov_create(split_line[2], &cam->fov, line);
 	node = ft_lstnew(cam);
 	if (!node)
 		mrt_error_msg(line, "Unable to allocate memory");

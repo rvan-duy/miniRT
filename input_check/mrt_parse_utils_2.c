@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 13:42:12 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/10 12:05:30 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,10 @@ void	mrt_vector_create(char *str, t_vector *v, int line)
 		mrt_error_msg(line, "Invalid vector value(s), must be in range [-1,1]");
 }
 
-int	mrt_fov_create(char *str, int line)
+void	mrt_fov_create(char *str, int *fov, int line)
 {
-	int	fov;
-
-	fov = ft_atoi(str);
-	if (fov < 0 || fov > 180)
+	*fov = ft_atoi(str);
+	if (*fov < 0 || *fov > 180)
 		mrt_error_msg(line, "Invalid field of view value, \
 		 must be in range [0,180]");
-	return (fov);
 }

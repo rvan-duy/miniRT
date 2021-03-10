@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/09 15:55:06 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/10 12:54:55 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS = main.c \
 		input_check/mrt_sphere_parse.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c
-FLAGS = -Wall -Wextra -Werror $(UNUSED)
+FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
 OBJ = $(SRCS:%.c=%.o)
 MLX = libmlx.a
@@ -36,8 +36,13 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
+# Linux
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -Llibft -lft -lm -lz -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+
+# MacOS
+#$(NAME): $(OBJ)
+#$(CC) $(FLAGS) $(OBJ) -Llibft -lft -lm -lz -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	rm -f *.o
