@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 11:00:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:47:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/16 14:50:28 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,4 +202,6 @@ void	mrt_rt_file_print(t_vars *v)
 	mrt_rt_file_print_square(v);
 	mrt_rt_file_print_cylinder(v);
 	mrt_rt_file_print_triangle(v);
+	p("--------------------------------\n");
+	p("*\\--- t_vars end of struct ---*/\n");
 }
