@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 15:06:31 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/16 14:37:25 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define TRUE 1
 # define FALSE 0
+# define p printf
 
 # include "libft.h" // t_list
 
@@ -59,19 +60,19 @@ typedef struct s_vector {
 	double	z;
 }	t_vector;
 
-// Light object
-typedef struct s_light {
-	t_coords	coords;
-	double		ratio;
-	int			rgb;
-}	t_light;
-
 // Camera object
 typedef struct s_camera {
 	t_coords	coords;
 	t_vector	vector;
 	int			fov;
 }	t_camera;
+
+// Light object
+typedef struct s_light {
+	t_coords	coords;
+	double		ratio;
+	int			rgb;
+}	t_light;
 
 // Sphere object
 typedef struct	s_sphere {
@@ -95,6 +96,23 @@ typedef struct	s_square {
 	int			rgb;
 }	t_square;
 
+// Cylinder object
+typedef struct s_cylinder {
+	t_coords	coords;
+	t_vector	vector;
+	double		diameter;
+	double		height;
+	int			rgb;
+}	t_cylinder;
+
+// Triangle object
+typedef struct s_triangle {
+	t_coords	coords_1;
+	t_coords	coords_2;
+	t_coords	coords_3;
+	int			rgb;
+}	t_triangle;
+
 typedef struct s_vars {
 	int			save;
 	t_res		res;
@@ -104,6 +122,8 @@ typedef struct s_vars {
 	t_list		*sphere;
 	t_list		*plane;
 	t_list		*square;
+	t_list		*cylinder;
+	t_list		*triangle;
 }	t_vars;
 
 // Modify pixels

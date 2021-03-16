@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/09 14:40:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 14:42:02 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/16 13:21:27 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	mrt_sphere_parse(char **split_line, t_vars *v, int line)
 		mrt_error_msg(line, "Not enough values for sphere");
 	mrt_coords_create(split_line[0], &sphere->coords, line);
 	mrt_diameter_create(split_line[1], &sphere->diameter, line);
+	sphere->rgb = mrt_rgb_create(split_line[2], line);
 	node = ft_lstnew(sphere);
 	if (!node)
 		mrt_error_msg(line, "Unable to allocate memory");

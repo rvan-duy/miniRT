@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:00:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 13:44:09 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/16 11:06:59 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ void    mrt_input_check(int argc, char **argv, t_vars *v)
 {
     mrt_argv_check(argc, argv, v);
     mrt_rt_file_read(v, argv[1]);
+    mrt_rt_file_print(v);
 }
