@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:37:25 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/17 22:00:17 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # define TRUE 1
 # define FALSE 0
 # define p printf
+
+// X11 Events
+# define KeyPress 2
+# define MotionNotify 6
+
+// X11 Masks
+# define KeyPressMask 1L<<0
+# define PointerMotionMask 1L<<6
 
 # include "libft.h" // t_list
 

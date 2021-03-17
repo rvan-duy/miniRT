@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/17 10:46:51 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/17 22:17:19 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS = main.c \
 		input_check/mrt_square_parse.c \
 		input_check/mrt_cylinder_parse.c \
 		input_check/mrt_triangle_parse.c \
+		input_check/mrt_scene_check.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c \
 		color/mrt_color_get.c \
