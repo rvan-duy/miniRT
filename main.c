@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/17 01:27:16 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/17 10:48:10 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,46 +50,35 @@ void    mrt_draw_cross(t_data *v, int color)
 
 int main(int argc, char **argv)
 {
-    //t_data  v;
+    t_data  data;
     t_vars  vars;
 
     // Initializing needs to be redone
     mrt_vars_init(&vars);
-    /*ft_bzero(&v, sizeof(t_data));
-    ft_bzero(&vars, sizeof(t_vars));
-    vars.res = malloc(sizeof(t_res));
-    vars.ambient = malloc(sizeof(t_ambient));
-    vars.cam = malloc(sizeof(t_camera));
-    vars.coords = malloc(sizeof(t_coords));
-    vars.coords.*/
-    
+    ft_bzero(&data, sizeof(t_data));
 
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);
-    int i = 0x697FFF;
-    printf("%X\n", i);
-    mrt_color_invert(&i);
-    printf("%X\n", i);
 
     // Initializing the mlx library, can return NULL if it goes wrong.
-    /*img.mlx = mlx_init();
-    if (!img.mlx)
+    data.mlx = mlx_init();
+    if (!data.mlx)
         return (0);
 
-    img.r_width = 1920;
-    img.r_height = 1080;
-    img.win = mlx_new_window(img.mlx, img.r_width, img.r_height, "Hello World");
-    img.img = mlx_new_image(img.mlx, img.r_width, img.r_height);
-    img.addr = mlx_get_data_addr(img.img, &img.bit_per_pixel, &img.line_length, &img.endian);
+    data.r_width = 1920;
+    data.r_height = 1080;
+    data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
+    data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
+    data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
     // Hooks
-    mlx_loop_hook(img.mlx, mrt_frame_render, &img);
+    mlx_loop_hook(data.mlx, mrt_frame_render, &data);
     // 2: KeyPress, 1L<<0: KeyPressMask
-    mlx_hook(img.win, 2, 1L<<0, mrt_key_press, &img);
-    mlx_hook(img.win, 6, 1L<<6, mrt_mouse_motion, &img);
+    mlx_hook(data.win, 2, 1L<<0, mrt_key_press, &data);
+    mlx_hook(data.win, 6, 1L<<6, mrt_mouse_motion, &data);
 
-    //mlx_hook(img.win, 17, (0L), close_program, &img);
-    mlx_loop(img.mlx);*/
+    //mlx_hook(data.win, 17, (0L), close_program, &data);
+    mlx_loop(data.mlx);
 
     return 0;
 }

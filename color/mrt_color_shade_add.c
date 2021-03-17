@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/17 00:05:24 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/17 01:24:13 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/17 11:00:58 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	mrt_color_shade_add(double distance, int *rgb)
 	if (distance <= 1 && distance >= 0)
 	{
 		shade = 1 - distance;
-		r = mrt_color_red_get(*rgb) * shade;
-		g = mrt_color_green_get(*rgb) * shade;
+		r = (mrt_color_red_get(*rgb) >> 16) * shade;
+		g = (mrt_color_green_get(*rgb) >> 8) * shade;
 		b = mrt_color_blue_get(*rgb) * shade;
-		*rgb = r + g + b;
+		*rgb = mrt_color_rgb_create(r, g, b);
 	}
 }
