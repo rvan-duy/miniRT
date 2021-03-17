@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/09 12:11:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/17 01:10:21 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/miniRT.h"
+#include "includes/color.h"
 //#include "mlx_linux/mlx.h"
 #include "mlx/mlx.h"
 #include "includes/libft.h"
@@ -65,6 +66,10 @@ int main(int argc, char **argv)
 
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);
+    int i = 0x30D42E;
+    printf("%X\n", i);
+    mrt_color_shade_add(0.2, &i);
+    printf("%X\n", i);
 
     // Initializing the mlx library, can return NULL if it goes wrong.
     /*img.mlx = mlx_init();

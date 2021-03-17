@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/16 14:34:48 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/17 01:13:06 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ SRCS = main.c \
 		input_check/mrt_triangle_parse.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c \
+		color/mrt_color_get.c \
+		color/mrt_color_shade_add.c \
 		print/mrt_rt_file_print.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
@@ -40,7 +42,7 @@ LIBFT = libft.a
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(UNUSED) -c $< -o $@
 
 # Linux
 $(NAME): $(OBJ)
@@ -51,15 +53,16 @@ $(NAME): $(OBJ)
 #$(CC) $(FLAGS) $(OBJ) -Llibft -lft -lm -lz -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
-	rm -f *.o
-	rm -f input_check/*.o
-	rm -f error_msg/*.o
-	rm -f struct_init/*.o
-	rm -f print/*.o
+	@rm -f *.o
+	@rm -f input_check/*.o
+	@rm -f error_msg/*.o
+	@rm -f struct_init/*.o
+	@rm -f print/*.o
+	@rm -f color/*.o
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f a.out
+	@rm -f $(NAME)
+	@rm -f a.out
 
 re: fclean all
 
