@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/17 01:13:06 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/17 01:22:51 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS = main.c \
 		struct_init/mrt_vars_init.c \
 		color/mrt_color_get.c \
 		color/mrt_color_shade_add.c \
+		color/mrt_color_invert.c \
 		print/mrt_rt_file_print.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
