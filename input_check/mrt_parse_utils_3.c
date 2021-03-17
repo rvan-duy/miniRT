@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/10 15:02:06 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:22:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/17 22:49:27 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	mrt_size_create(char *str, double *size, int line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-')
