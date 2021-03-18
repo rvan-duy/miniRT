@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 13:05:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 12:58:16 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 00:40:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	mrt_camera_parse(char **split_line, t_vars *v, int line)
 	if (size < 3)
 		mrt_error_msg(line, "Not enough values for camera");
 	mrt_coords_create(split_line[0], &cam->coords, line);
-	mrt_vector_create(split_line[1], &cam->vector, line);
+	mrt_norm_vector_create(split_line[1], &cam->norm_vector, line);
 	mrt_fov_create(split_line[2], &cam->fov, line);
 	node = ft_lstnew(cam);
 	if (!node)

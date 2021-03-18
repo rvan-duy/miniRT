@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 14:15:16 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/17 22:50:50 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 00:40:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	mrt_cylinder_parse(char **split_line, t_vars *v, int line)
 	if (size < 5)
 		mrt_error_msg(line, "Not enough values for cylinder");
 	mrt_coords_create(split_line[0], &cylinder->coords, line);
-	mrt_vector_create(split_line[1], &cylinder->vector, line);
+	mrt_norm_vector_create(split_line[1], &cylinder->norm_vector, line);
 	mrt_diameter_create(split_line[2], &cylinder->diameter, line);
 	mrt_height_create(split_line[3], &cylinder->height, line);
 	cylinder->rgb = mrt_rgb_create(split_line[4], line);

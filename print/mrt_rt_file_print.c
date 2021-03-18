@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 11:00:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:50:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 00:40:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static void	mrt_rt_file_print_camera(t_vars *v)
 		p("- camera (%d):\tcoords:\t", i);
 		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
-		p("\t\tvector:\tx\t%f\n\t\t\t", tmp->vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->vector.y, tmp->vector.z);
+		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
+		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\tfov:\t\t%d\n", tmp->fov);
 		i++;
 	}
@@ -114,8 +114,8 @@ static void mrt_rt_file_print_plane(t_vars *v)
 		p("- plane (%d):\tcoords:\t", i);
 		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
-		p("\t\tvector:\tx\t%f\n\t\t\t", tmp->vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->vector.y, tmp->vector.z);
+		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
+		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\trgb:\t\t%X\n", tmp->rgb);
 		i++;
 	}
@@ -134,8 +134,8 @@ static void	mrt_rt_file_print_square(t_vars *v)
 		p("- square (%d):\tcoords:\t", i);
 		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
-		p("\t\tvector:\tx\t%f\n\t\t\t", tmp->vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->vector.y, tmp->vector.z);
+		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
+		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\tsize:\t\t%f\n", tmp->size);
 		p("\t\trgb:\t\t%X\n", tmp->rgb);
 		i++;
@@ -155,8 +155,8 @@ static void	mrt_rt_file_print_cylinder(t_vars *v)
 		p("- cylinder (%d):\tcoords:\t", i);
 		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
-		p("\t\tvector:\tx\t%f\n\t\t\t", tmp->vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->vector.y, tmp->vector.z);
+		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
+		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\tdiameter:\t%f\n", tmp->diameter);
 		p("\t\theight:\t\t%f\n", tmp->height);
 		p("\t\trgb:\t\t%X\n", tmp->rgb);

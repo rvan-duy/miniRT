@@ -6,12 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/17 22:06:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 01:02:35 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/miniRT.h"
 #include "includes/color.h"
+#include "includes/math.h"
 //#include "mlx_linux/mlx.h"
 #include "mlx/mlx.h"
 #include "includes/libft.h"
@@ -60,16 +61,24 @@ int main(int argc, char **argv)
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);
 
+    // Testing with math functions
+    t_vector vec;
+    vec.tail.x = 1;
+    vec.tail.y = 1;
+    vec.tail.z = 1;
+    vec.head.x = 5;
+    vec.head.y = 3;
+    vec.head.z = 5;
+    
+    printf("%f\n", mrt_math_magnitude_calc(&vec));
+
     // Initializing the mlx library, can return NULL if it goes wrong.
-    data.mlx = mlx_init();
+    /*data.mlx = mlx_init();
     if (!data.mlx)
         return (0);
 
-    if (vars.res.status)
-    {
-        data.r_width = vars.res.width;
-        data.r_height = vars.res.height;
-    }
+    data.r_width = vars.res.width;
+    data.r_height = vars.res.height;
 
     data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
@@ -80,8 +89,11 @@ int main(int argc, char **argv)
     mlx_hook(data.win, KeyPress, KeyPressMask, mrt_key_press, &data);
     mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
 
+    // Vector: is a line segment running from point A (tail) to point B (head)
+    // Magnitude
+
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);
+    mlx_loop(data.mlx);*/
 
     return 0;
 }

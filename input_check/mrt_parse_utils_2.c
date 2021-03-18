@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 15:04:31 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 00:36:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_coords t_vector
+#include "../includes/miniRT.h" // t_coords t_norm_vector
 #include "../includes/error_msg.h" // error_msg
 #include "../includes/libft.h" // atoi atod
 #include "../includes/input_check.h" // arr_size_check
@@ -70,7 +70,7 @@ void	mrt_coords_create(char *str, t_coords *c, int line)
 	c->z = ft_atod(split_str[2]);
 }
 
-void	mrt_vector_create(char *str, t_vector *v, int line)
+void	mrt_norm_vector_create(char *str, t_norm_vector *v, int line)
 {
 	char	**split_str;
 	int		size;

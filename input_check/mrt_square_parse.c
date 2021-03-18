@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/10 14:54:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:15:29 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 00:40:59 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	mrt_square_parse(char **split_line, t_vars *v, int line)
 	if (size < 4)
 		mrt_error_msg(line, "Not enough values for square");
 	mrt_coords_create(split_line[0], &square->coords, line);
-	mrt_vector_create(split_line[1], &square->vector, line);
+	mrt_norm_vector_create(split_line[1], &square->norm_vector, line);
 	mrt_size_create(split_line[2], &square->size, line);
 	square->rgb = mrt_rgb_create(split_line[3], line);
 	node = ft_lstnew(square);

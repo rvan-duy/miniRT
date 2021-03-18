@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/17 22:17:19 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/18 00:57:42 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = main.c \
 		color/mrt_color_get.c \
 		color/mrt_color_shade_add.c \
 		color/mrt_color_invert.c \
+		math/mrt_math_magnitude_calc.c \
 		print/mrt_rt_file_print.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
