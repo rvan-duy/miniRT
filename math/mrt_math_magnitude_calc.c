@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 00:16:29 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 01:04:30 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/18 01:27:08 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ double  mrt_math_magnitude_calc(t_vector *vec)
     y = vec->head.y - vec->tail.y;
     z = vec->head.z - vec->tail.z;
     magnitude = sqrt((x * x) + (y * y) + (z * z));
+    return (magnitude);
 }
