@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 00:45:01 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/19 21:43:40 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,6 @@
 
 # include "libft.h" // t_list
 
-// Main struct to store all data in
-typedef struct s_data {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	char	*addr;
-	int		bit_per_pixel;
-	int		line_length;
-	int		endian;
-	int		r_height;
-	int		r_width;
-}	t_data;
-
 // Resolution object
 typedef struct s_res {
 	int		status;
@@ -50,7 +37,7 @@ typedef struct s_res {
 // Ambient object
 typedef struct s_ambient {
 	int		status;
-	double	ratio;
+	double	ratio; // how much less light do we recieve on shadow side?
 	int		rgb;
 }	t_ambient;
 
@@ -140,13 +127,27 @@ typedef struct s_vars {
 	t_list		*triangle;
 }	t_vars;
 
+// Main struct to store all data in
+typedef struct s_data {
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bit_per_pixel;
+	int		line_length;
+	int		endian;
+	int		r_width;
+	int		r_height;
+	t_vars	vars;
+}	t_data;
+
 // Modify pixels
 void	my_mlx_pixel_put(t_data *v, int x, int y, int color);
 void	mrt_draw_cross(t_data *v, int color);
 
 // Events
 int		mrt_frame_render(t_data *v);
-int		mrt_key_press(int keycode, t_data *v);
+int		mrt_key_press(int keycode);
 int		mrt_mouse_motion(int x, int y, t_data *v);
 int		mrt_program_close(void *ptr);
 

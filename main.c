@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 01:02:35 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/19 18:08:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,10 @@ int main(int argc, char **argv)
 
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);
-
-    // Testing with math functions
-    t_vector vec;
-    vec.tail.x = 1;
-    vec.tail.y = 1;
-    vec.tail.z = 1;
-    vec.head.x = 5;
-    vec.head.y = 3;
-    vec.head.z = 5;
-    
-    printf("%f\n", mrt_math_magnitude_calc(&vec));
+    data.vars = vars;
 
     // Initializing the mlx library, can return NULL if it goes wrong.
-    /*data.mlx = mlx_init();
+    data.mlx = mlx_init();
     if (!data.mlx)
         return (0);
 
@@ -93,7 +83,7 @@ int main(int argc, char **argv)
     // Magnitude
 
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);*/
+    mlx_loop(data.mlx);
 
     return 0;
 }

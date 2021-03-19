@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 00:36:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/19 21:56:29 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ void	mrt_comma_check(char *str, int line)
 			commacount++;
 		i++;
 	}
-	if (commacount != 2)
+	if (commacount > 2)
 		mrt_error_msg(line, "Too many commas used");
+	if (commacount < 2)
+		mrt_error_msg(line, "Not enough commas used");
 }
 
 void	mrt_coords_create(char *str, t_coords *c, int line)
