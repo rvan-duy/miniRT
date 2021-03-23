@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/23 16:06:29 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/23 16:49:14 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,17 +63,17 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
-	@rm -f *.o
-	@rm -f input_check/*.o
-	@rm -f error_msg/*.o
-	@rm -f struct_init/*.o
-	@rm -f print/*.o
-	@rm -f color/*.o
-	@rm -f math/*.o
+	@/bin/rm -f *.o
+	@/bin/rm -f input_check/*.o
+	@/bin/rm -f error_msg/*.o
+	@/bin/rm -f struct_init/*.o
+	@/bin/rm -f print/*.o
+	@/bin/rm -f color/*.o
+	@/bin/rm -f math/*.o
 
 fclean: clean
-	@rm -f $(NAME)
-	@rm -f a.out
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f a.out
 
 re: fclean all
 

@@ -1,0 +1,6 @@
+BMP file is a picture format
+HEADER contains all info of the bmp
+
+what we do:
+- open BMP file in c
+- see it in text mode
