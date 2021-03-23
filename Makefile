@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/19 21:50:11 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/20 11:56:28 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,4 +73,4 @@ fclean: clean
 re: fclean all
 
 test: clean all
-	./$(NAME) simpel.rt
+	./$(NAME) minimalist.rt

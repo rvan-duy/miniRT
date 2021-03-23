@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 11:00:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 00:40:07 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/20 12:24:57 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 static void	mrt_rt_file_print_save(t_vars *v)
 {
 	if (v->save == TRUE)
-		p("- save:\t\t\t\tTRUE -\n");
+		p("- save:\t\t\t\t\tTRUE\n");
 	if (v->save == FALSE)
-		p("- save:\t\t\t\tFALSE\n");
+		p("- save:\t\t\t\t\tFALSE\n");
 }
 
 static void	mrt_rt_file_print_res(t_vars *v)
 {
 	if (v->res.status == TRUE)
 	{
-		p("- res:\t\theight:\t\t%d\n", v->res.height);
-		p("      \t\twidth:\t\t%d\n", v->res.width);
+		p("- res:\t\theight:\t\t\t%d\n", v->res.height);
+		p("      \t\twidth:\t\t\t%d\n", v->res.width);
 	}
 	else
 		p("- res: FALSE\n");
@@ -36,11 +36,11 @@ static void	mrt_rt_file_print_ambient(t_vars *v)
 {
 	if (v->ambient.status == TRUE)
 	{
-		p("- ambient:\tratio:\t\t%f\n", v->ambient.ratio);
-		p("\t\trgb:\t\t%X\n", v->ambient.rgb);
+		p("- ambient:\tratio:\t\t\t%f\n", v->ambient.ratio);
+		p("\t\trgb:\t\t\t%X\n", v->ambient.rgb);
 	}
 	else
-		p("- ambient: FALSE\n");
+		p("- ambient:\t\t\t\t\tFALSE\n");
 }
 
 static void	mrt_rt_file_print_camera(t_vars *v)
@@ -53,12 +53,12 @@ static void	mrt_rt_file_print_camera(t_vars *v)
 	{
 		v->cam = v->cam->next;
 		tmp = v->cam->content;
-		p("- camera (%d):\tcoords:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
+		p("- camera (%d):\tcoords:\t\t", i);
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
 		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
-		p("\t\tfov:\t\t%d\n", tmp->fov);
+		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
+		p("\t\tfov:\t\t\t%d\n", tmp->fov);
 		i++;
 	}
 }
@@ -73,11 +73,11 @@ static void	mrt_rt_file_print_light(t_vars *v)
 	{
 		v->light = v->light->next;
 		tmp = v->light->content;
-		p("- light (%d):\tcoords:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
+		p("- light (%d):\tcoords:\t\t", i);
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
-		p("\t\tratio:\t\t%f\n", tmp->ratio);
-		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		p("\t\tratio:\t\t\t%f\n", tmp->ratio);
+		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
 		i++;
 	}	
 }
@@ -92,11 +92,11 @@ static void	mrt_rt_file_print_sphere(t_vars *v)
 	{
 		v->sphere = v->sphere->next;
 		tmp = v->sphere->content;
-		p("- sphere (%d):\tcoords:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
+		p("- sphere (%d):\tcoords:\t\t", i);
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
-		p("\t\tdiameter:\t%f\n", tmp->diameter);
-		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		p("\t\tdiameter:\t\t%f\n", tmp->diameter);
+		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
 		i++;
 	}
 }
@@ -111,12 +111,12 @@ static void mrt_rt_file_print_plane(t_vars *v)
 	{
 		v->plane = v->plane->next;
 		tmp = v->plane->content;
-		p("- plane (%d):\tcoords:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
+		p("- plane (%d):\tcoords:\t\t", i);
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
 		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
-		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
+		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
 		i++;
 	}
 }
@@ -131,13 +131,13 @@ static void	mrt_rt_file_print_square(t_vars *v)
 	{
 		v->square = v->square->next;
 		tmp = v->square->content;
-		p("- square (%d):\tcoords:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
+		p("- square (%d):\tcoords:\t\t", i);
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
 		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
-		p("\t\tsize:\t\t%f\n", tmp->size);
-		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
+		p("\t\tsize:\t\t\t%f\n", tmp->size);
+		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
 		i++;
 	}
 }
