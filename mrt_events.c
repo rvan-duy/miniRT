@@ -6,13 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/19 21:45:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 12:16:51 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/miniRT.h" // t_data & functions
 #include "includes/math.h" // shade_add
-#include "mlx_linux/mlx.h" // mlx functions
+//#include "mlx_linux/mlx.h" // mlx functions
+#include "mlx/mlx.h" // mlx functions
 #include "includes/color.h" // shade
 #include <stdio.h> // printf
 #include <stdlib.h> // exit
@@ -22,7 +23,7 @@ int mrt_key_press(int keycode)
     if (keycode == 65307)
     {
         printf("Key pressed: ESC (%d)\n", keycode);
-        mrt_program_close(NULL);
+        mrt_program_close();
     }
     printf("Key pressed: %d\n", keycode);
     return (1);
@@ -81,7 +82,7 @@ int mrt_frame_render(t_data *v)
     return (1);
 }
 
-int mrt_program_close(void *ptr)
+int mrt_program_close()
 {
     printf("Closing program..\n");
     exit(0);

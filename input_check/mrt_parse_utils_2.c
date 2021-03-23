@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 17:43:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/19 21:56:29 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 15:52:24 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	mrt_norm_vector_create(char *str, t_norm_vector *v, int line)
 	v->y = ft_atod(split_str[1]);
 	v->z = ft_atod(split_str[2]);
 	if (v->x > 1 || v->y > 1 || v->z > 1 || v->x < -1 || v->y < -1 || v->z < -1)
-		mrt_error_msg(line, "Invalid vector value(s), must be in range [-1,1]");
+		mrt_error_msg(line, "Invalid normalized vector value(s), must be in range [-1,1]");
 }
 
 void	mrt_fov_create(char *str, int *fov, int line)

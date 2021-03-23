@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 21:10:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/10 13:01:41 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 12:42:46 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 #include "../includes/error_msg.h" // error_msg
 #include "../includes/libft.h" // atoi
 #include "../includes/input_check.h" // arr_size_check
+#include <stdio.h>
 
 void	mrt_resolution_parse(char **split_line, t_vars *v, int line)
 {
 	int	size;
 
+	printf("(2.2.1)\n");
 	if (v->res.status)
 		mrt_error_msg(line, "Resolution already exists");
 	size = mrt_arr_size_check(split_line);

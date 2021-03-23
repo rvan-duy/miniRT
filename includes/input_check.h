@@ -6,14 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 00:41:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 15:48:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INPUT_CHECK_H
 # define INPUT_CHECK_H
 
-#include "miniRT.h" // t_vars t_coords
+#include "miniRT.h" // t_vars t_coords libft
 
 void    mrt_input_check(int argc, char **argv, t_vars *v);
 void    mrt_input_read(int argc, char **argv, t_vars *v);
@@ -44,5 +44,6 @@ void    mrt_fov_create(char *str, int *fov, int line);
 void    mrt_diameter_create(char *str, double *diameter, int line);
 void    mrt_size_create(char *str, double *size, int line);
 void    mrt_height_create(char *str, double *height, int line);
+void    mrt_lstadd(t_list **head, void *content, int line);
 
 #endif

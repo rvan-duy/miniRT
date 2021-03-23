@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 14:35:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:38:34 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 16:04:42 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_vars t_triangle t_list lstnew lstadd_back
+#include "../includes/miniRT.h" // t_vars t_triangle
 #include "../includes/error_msg.h" // error_msg
 #include "../includes/input_check.h" // arr_size_check create_functions
 
@@ -18,7 +18,6 @@ void	mrt_triangle_parse(char **split_line, t_vars *v, int line)
 {
 	int			size;
 	t_triangle	*triangle;
-	t_list		*node;
 
 	triangle = malloc(sizeof(t_triangle));
 	if (!triangle)
@@ -32,8 +31,5 @@ void	mrt_triangle_parse(char **split_line, t_vars *v, int line)
 	mrt_coords_create(split_line[1], &triangle->coords_2, line);
 	mrt_coords_create(split_line[2], &triangle->coords_3, line);
 	triangle->rgb = mrt_rgb_create(split_line[3], line);
-	node = ft_lstnew(triangle);
-	if (!node)
-		mrt_error_msg(line, "Unable to allocate memory");
-	ft_lstadd_back(&v->triangle, node);
+	mrt_lstadd(&v->triangle, triangle, line);
 }

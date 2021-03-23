@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/19 18:08:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 13:15:05 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,13 @@ int main(int argc, char **argv)
     t_vars  vars;
 
     // Initializing needs to be redone
-    mrt_vars_init(&vars);
+    ft_bzero(&vars, sizeof(t_vars));
     ft_bzero(&data, sizeof(t_data));
+    mrt_vars_init(&vars);
 
     // Doing extensive input checks
     mrt_input_check(argc, argv, &vars);
-    data.vars = vars;
+    /*data.vars = vars;
 
     // Initializing the mlx library, can return NULL if it goes wrong.
     data.mlx = mlx_init();
@@ -74,7 +75,7 @@ int main(int argc, char **argv)
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
     data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
-    // Hooks
+    // Hook
     mlx_loop_hook(data.mlx, mrt_frame_render, &data);
     mlx_hook(data.win, KeyPress, KeyPressMask, mrt_key_press, &data);
     mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
@@ -83,7 +84,7 @@ int main(int argc, char **argv)
     // Magnitude
 
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);
+    mlx_loop(data.mlx);*/
 
     return 0;
 }

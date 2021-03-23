@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/09 14:40:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 13:21:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 16:06:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_vars t_sphere t_list lstnew lstadd_back
+#include "../includes/miniRT.h" // t_vars t_sphere
 #include "../includes/error_msg.h" // error_msg
 #include "../includes/input_check.h" // arr_size_check create_functions
 
@@ -18,7 +18,6 @@ void	mrt_sphere_parse(char **split_line, t_vars *v, int line)
 {
 	int			size;
 	t_sphere	*sphere;
-	t_list		*node;
 
 	sphere = malloc(sizeof(t_sphere));
 	if (!sphere)
@@ -31,8 +30,5 @@ void	mrt_sphere_parse(char **split_line, t_vars *v, int line)
 	mrt_coords_create(split_line[0], &sphere->coords, line);
 	mrt_diameter_create(split_line[1], &sphere->diameter, line);
 	sphere->rgb = mrt_rgb_create(split_line[2], line);
-	node = ft_lstnew(sphere);
-	if (!node)
-		mrt_error_msg(line, "Unable to allocate memory");
-	ft_lstadd_back(&v->sphere, node);
+	mrt_lstadd(&v->sphere, sphere, line);
 }

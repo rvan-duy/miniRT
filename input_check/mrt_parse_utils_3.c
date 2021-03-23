@@ -6,12 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/10 15:02:06 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/17 22:49:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 15:43:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h" // atod
 #include "../includes/error_msg.h" // error_msg
+#include "../includes/miniRT.h" // t_vars libft
+#include <stdio.h>
 
 void	mrt_size_create(char *str, double *size, int line)
 {
@@ -43,4 +44,23 @@ void	mrt_height_create(char *str, double *height, int line)
 		i++;
 	}
 	*height = ft_atod(str);
+}
+
+void	mrt_lstadd(t_list **head, void *content, int line)
+{
+	t_list *node;
+
+	if (*head)
+	{
+		node = ft_lstnew(content);
+		if (!node)
+			mrt_error_msg(line, "Unable to allocate memory");
+		ft_lstadd_back(head, node);
+	}
+	else
+	{
+		*head = ft_lstnew(content);
+		if (!*head)
+			mrt_error_msg(line, "Unable to allocate memory");
+	}
 }

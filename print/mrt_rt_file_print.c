@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 11:00:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/20 12:24:57 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 16:05:58 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ static void	mrt_rt_file_print_camera(t_vars *v)
 	t_camera    *tmp;
 
 	i = 1;
-	while (v->cam->next != NULL)
+	while (v->cam)
 	{
-		v->cam = v->cam->next;
 		tmp = v->cam->content;
 		p("- camera (%d):\tcoords:\t\t", i);
 		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
@@ -59,6 +58,9 @@ static void	mrt_rt_file_print_camera(t_vars *v)
 		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
 		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\tfov:\t\t\t%d\n", tmp->fov);
+		if (v->cam->next == NULL)
+			break ;
+		v->cam = v->cam->next;
 		i++;
 	}
 }
@@ -69,34 +71,38 @@ static void	mrt_rt_file_print_light(t_vars *v)
 	t_light	*tmp;
 
 	i = 1;
-	while (v->light->next != NULL)
+	while (v->light)
 	{
-		v->light = v->light->next;
 		tmp = v->light->content;
 		p("- light (%d):\tcoords:\t\t", i);
 		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
 		p("\t\tratio:\t\t\t%f\n", tmp->ratio);
 		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
+		if (v->light->next == NULL)
+			break ;
+		v->light = v->light->next;
 		i++;
 	}	
 }
 
-static void	mrt_rt_file_print_sphere(t_vars *v)
+static void mrt_rt_file_print_sphere(t_vars *v)
 {
-	int			i;
-	t_sphere	*tmp;
+	int i;
+	t_sphere *tmp;
 
 	i = 1;
-	while (v->sphere->next != NULL)
+	while (v->sphere)
 	{
-		v->sphere = v->sphere->next;
 		tmp = v->sphere->content;
 		p("- sphere (%d):\tcoords:\t\t", i);
 		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
 		p("z\t%f\n", tmp->coords.z);
 		p("\t\tdiameter:\t\t%f\n", tmp->diameter);
 		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
+		if (v->sphere->next == NULL)
+			break ;
+		v->sphere = v->sphere->next;
 		i++;
 	}
 }
@@ -107,9 +113,8 @@ static void mrt_rt_file_print_plane(t_vars *v)
 	t_plane	*tmp;
 
 	i = 1;
-	while (v->plane->next != NULL)
+	while (v->plane)
 	{
-		v->plane = v->plane->next;
 		tmp = v->plane->content;
 		p("- plane (%d):\tcoords:\t\t", i);
 		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
@@ -117,6 +122,9 @@ static void mrt_rt_file_print_plane(t_vars *v)
 		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
 		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
+		if (v->plane->next == NULL)
+			break ;
+		v->plane = v->plane->next;
 		i++;
 	}
 }
@@ -127,9 +135,8 @@ static void	mrt_rt_file_print_square(t_vars *v)
 	t_square	*tmp;
 
 	i = 1;
-	while (v->square->next != NULL)
+	while (v->square)
 	{
-		v->square = v->square->next;
 		tmp = v->square->content;
 		p("- square (%d):\tcoords:\t\t", i);
 		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t\t", tmp->coords.x, tmp->coords.y);
@@ -138,6 +145,9 @@ static void	mrt_rt_file_print_square(t_vars *v)
 		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
 		p("\t\tsize:\t\t\t%f\n", tmp->size);
 		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
+		if (v->square->next == NULL)
+			break ;
+		v->square = v->square->next;
 		i++;
 	}
 }
@@ -148,18 +158,20 @@ static void	mrt_rt_file_print_cylinder(t_vars *v)
 	t_cylinder	*tmp;
 
 	i = 1;
-	while (v->cylinder->next != NULL)
+	while (v->cylinder)
 	{
-		v->cylinder = v->cylinder->next;
 		tmp = v->cylinder->content;
 		p("- cylinder (%d):\tcoords:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
-		p("z\t%f\n", tmp->coords.z);
+		p("\tx\t%f\n\t\t\t\ty\t%f\n\t\t\t", tmp->coords.x, tmp->coords.y);
+		p("\tz\t%f\n", tmp->coords.z);
 		p("\t\tnorm_vector:\tx\t%f\n\t\t\t", tmp->norm_vector.x);
-		p("y\t%f\n\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
-		p("\t\tdiameter:\t%f\n", tmp->diameter);
-		p("\t\theight:\t\t%f\n", tmp->height);
-		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		p("\ty\t%f\n\t\t\t\tz\t%f\n", tmp->norm_vector.y, tmp->norm_vector.z);
+		p("\t\tdiameter:\t\t%f\n", tmp->diameter);
+		p("\t\theight:\t\t\t%f\n", tmp->height);
+		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
+		if (v->cylinder->next == NULL)
+			break ;
+		v->cylinder = v->cylinder->next;
 		i++;
 	}
 }
@@ -170,20 +182,20 @@ static void	mrt_rt_file_print_triangle(t_vars *v)
 	t_triangle	*tmp;
 
 	i = 1;
-	while (v->triangle->next != NULL)
+	while (v->triangle)
 	{
-		v->triangle = v->triangle->next;
 		tmp = v->triangle->content;
-		p("- triangle (%d):\tcrds_1:\t", i);
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords_1.x, tmp->coords_1.y);
-		p("z\t%f\n", tmp->coords_1.z);
-		p("\t\tcrds_2:\t");
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords_2.x, tmp->coords_2.y);
-		p("z\t%f\n", tmp->coords_2.z);
-		p("\t\tcrds_3:\t");
-		p("x\t%f\n\t\t\ty\t%f\n\t\t\t", tmp->coords_3.x, tmp->coords_3.y);
-		p("z\t%f\n", tmp->coords_3.z);
+		p("- triangle (%d):\tcoords_1:\t", i);
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t", tmp->coords_1.x, tmp->coords_1.y);
+		p("\tz\t%f\n", tmp->coords_1.z);
+		p("\t\tcoords_2:\t");
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t", tmp->coords_2.x, tmp->coords_2.y);
+		p("\tz\t%f\n", tmp->coords_2.z);
+		p("\t\tcoords_3:\t");
+		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t", tmp->coords_3.x, tmp->coords_3.y);
+		p("\tz\t%f\n", tmp->coords_3.z);
 		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		v->triangle = v->triangle->next;
 		i++;
 	}
 }

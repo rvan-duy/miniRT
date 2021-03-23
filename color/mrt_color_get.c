@@ -6,18 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/17 00:15:45 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/19 17:40:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 12:15:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	mrt_color_rgb_create(int r, int g, int b)
 {
 	return (r << 16 | g << 8 | b);
-}
-
-int mrt_color_transarancy_get(int trgb)
-{
-	
 }
 
 int	mrt_color_red_get(int rgb)

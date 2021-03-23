@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/20 11:56:28 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/23 16:06:29 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,16 +46,21 @@ LIBFT = libft.a
 
 all: $(NAME)
 
+#MacOS
 %.o: %.c
-	$(CC) $(UNUSED) -c $< -o $@
+	$(CC) $(FLAGS) -Imlx -c $< -o $@
 
-# Linux
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+#Linux
+#%.o: %.c
+#$(CC) $(UNUSED) -c $< -o $@
 
-# MacOS
+#Linux
 #$(NAME): $(OBJ)
-#$(CC) $(FLAGS) $(OBJ) -Llibft -lft -lm -lz -framework OpenGL -framework AppKit -o $(NAME)
+#$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+
+#MacOS
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	@rm -f *.o

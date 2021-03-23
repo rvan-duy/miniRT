@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/19 21:43:40 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 12:17:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,6 @@ void	mrt_draw_cross(t_data *v, int color);
 int		mrt_frame_render(t_data *v);
 int		mrt_key_press(int keycode);
 int		mrt_mouse_motion(int x, int y, t_data *v);
-int		mrt_program_close(void *ptr);
+int		mrt_program_close();
 
 #endif

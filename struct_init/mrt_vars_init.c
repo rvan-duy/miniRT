@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/08 16:39:03 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/16 14:38:58 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/23 13:13:40 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void    mrt_vars_init(t_vars *v)
     v->ambient.status = FALSE;
     v->ambient.ratio = 0;
     v->ambient.rgb = -1;
-    v->cam = malloc(sizeof(t_list)); //protec
-    v->light = malloc(sizeof(t_list)); //protec
-    v->sphere = malloc(sizeof(t_list)); //protec
-    v->plane = malloc(sizeof(t_list)); //protec
-    v->square = malloc(sizeof(t_list)); //protec
-    v->cylinder = malloc(sizeof(t_list)); //protec
-    v->triangle = malloc(sizeof(t_list)); //protec
+    //v->cam = malloc(sizeof(t_list)); //protec
+    //v->light = malloc(sizeof(t_list)); //protec
+    //v->sphere = malloc(sizeof(t_list)); //protec
+    //v->plane = malloc(sizeof(t_list)); //protec
+    //v->square = malloc(sizeof(t_list)); //protec
+    //v->cylinder = malloc(sizeof(t_list)); //protec
+    //v->triangle = malloc(sizeof(t_list)); //protec
 }
