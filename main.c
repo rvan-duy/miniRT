@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/23 16:22:19 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/27 23:32:43 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "mlx/mlx.h"
 #include "includes/libft.h"
 #include "includes/input_check.h"
+#include "includes/screenshot.h"
 #include "includes/struct_init.h"
 #include <stddef.h>
 #include <stdio.h>
@@ -75,8 +76,10 @@ int main(int argc, char **argv)
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
     data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
+    mrt_bmp_create(&data);
+
     // Hook
-    mlx_loop_hook(data.mlx, mrt_frame_render, &data);
+    /*mlx_loop_hook(data.mlx, mrt_frame_render, &data);
     mlx_hook(data.win, KeyPress, KeyPressMask, mrt_key_press, &data);
     mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
 
@@ -84,7 +87,7 @@ int main(int argc, char **argv)
     // Magnitude
 
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);
+    mlx_loop(data.mlx);*/
 
     return 0;
 }
