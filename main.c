@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/27 23:32:43 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:23:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ int main(int argc, char **argv)
     data.r_width = vars.res.width;
     data.r_height = vars.res.height;
 
-    data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
+    mrt_bmp_create(&data);
+
+    /*data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
     data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
-    mrt_bmp_create(&data);
-
     // Hook
-    /*mlx_loop_hook(data.mlx, mrt_frame_render, &data);
+    mlx_loop_hook(data.mlx, mrt_frame_render, &data);
     mlx_hook(data.win, KeyPress, KeyPressMask, mrt_key_press, &data);
     mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
 

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/25 10:41:27 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/27 23:20:49 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:22:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void    mrt_bmp_open()
 
 	ft_bzero(&file_header, sizeof(t_bmp_file_header));
 	ft_bzero(&dib_header, sizeof(t_bmp_dib_header));	
-	file = open("Shapes.bmp", O_RDWR | O_CREAT, 0666);
+	file = open("screenshot.bmp", O_RDWR | O_CREAT, 0666);
 	//read(file, &file_header, sizeof(t_bmp_file_header));
-	read(file, &file_header.name, 2 * sizeof(char));
+	/*read(file, &file_header.name, 2 * sizeof(char));
 	read(file, &file_header.size, 3 * sizeof(int32_t));
 	read(file, &dib_header, sizeof(t_bmp_dib_header));
 	printf("File header name:%c%c\n", file_header.name[0], file_header.name[1]);
@@ -41,7 +41,7 @@ void    mrt_bmp_open()
 	printf("DIB Header bit per pixel:%u\n", dib_header.bit_per_pixel);
 	printf("DIB Header compression method:%u\n", dib_header.compression_method);
 	printf("DIB Header image size:%u\n", dib_header.image_size);
-	close(file);
+	close(file);*/
 }
 
 int main()

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/25 10:42:04 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/27 23:37:08 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/29 11:06:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCREENSHOT_H
 
 #include <stdint.h> // specific ints byte wise
+#include "miniRT.h" // t_data
 
 /* Struct containing BMP file header info */
 // name: 2 bytes for name of header field (actually 4 bytes cuz C being C)
