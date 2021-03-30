@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/23 12:17:03 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/30 15:41:45 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,24 @@ typedef struct s_coords {
 	double	z;
 }	t_coords;
 
-// 3D vector
-typedef struct s_vector {
+// 3D vector (old for magnitude/norm etc)
+typedef struct s_old_vector {
 	t_coords	tail;
 	t_coords	head;
-}	t_vector;
+}	t_old_vector;
 
 // 3D normalized vector
-typedef struct s_norm_vector {
+typedef struct s_vector {
 	double	x;
 	double	y;
 	double	z;
-}	t_norm_vector;
+}	t_vector;
 
 // Camera object
 typedef struct s_camera {
-	t_coords		coords;
-	t_norm_vector	norm_vector;
-	int				fov;
+	t_coords	coords;
+	t_vector	norm_vector;
+	int			fov;
 }	t_camera;
 
 // Light object
@@ -84,26 +84,26 @@ typedef struct	s_sphere {
 
 // Plane object
 typedef struct	s_plane {
-	t_coords		coords;
-	t_norm_vector	norm_vector;
-	int				rgb;
+	t_coords	coords;
+	t_vector	norm_vector;
+	int			rgb;
 }	t_plane;
 
 // Square object
 typedef struct	s_square {
-	t_coords		coords;
-	t_norm_vector	norm_vector;
-	double			size;
-	int				rgb;
+	t_coords	coords;
+	t_vector	norm_vector;
+	double		size;
+	int			rgb;
 }	t_square;
 
 // Cylinder object
 typedef struct s_cylinder {
-	t_coords		coords;
-	t_norm_vector	norm_vector;
-	double			diameter;
-	double			height;
-	int				rgb;
+	t_coords	coords;
+	t_vector	norm_vector;
+	double		diameter;
+	double		height;
+	int			rgb;
 }	t_cylinder;
 
 // Triangle object

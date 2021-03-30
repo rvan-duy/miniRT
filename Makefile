@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/03/27 23:30:16 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/03/30 14:59:21 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ SRCS = main.c \
 		math/mrt_math_norm_vector_calc.c \
 		print/mrt_rt_file_print.c \
 		screenshot/mrt_bmp_create.c \
+		math/mrt_math_vector_operators.c \
+		ray/mrt_ray_colour_get.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
@@ -48,20 +50,20 @@ LIBFT = libft.a
 all: $(NAME)
 
 #MacOS
-#%.o: %.c
-#$(CC) $(FLAGS) -Imlx -c $< -o $@
-
-#Linux
 %.o: %.c
-	$(CC) $(UNUSED) -c $< -o $@
+	$(CC) $(UNUSED) -Imlx -c $< -o $@
 
 #Linux
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+#%.o: %.c
+#$(CC) $(UNUSED) -c $< -o $@
+
+#Linux
+#$(NAME): $(OBJ)
+#$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 
 #MacOS
-#$(NAME): $(OBJ)
-#$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	@/bin/rm -f *.o
@@ -72,6 +74,7 @@ clean:
 	@/bin/rm -f color/*.o
 	@/bin/rm -f math/*.o
 	@/bin/rm -f screenshot/*.o
+	@/bin/rm -f ray/*.o
 
 fclean: clean
 	@/bin/rm -f $(NAME)

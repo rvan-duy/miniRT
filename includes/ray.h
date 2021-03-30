@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_math_norm_vector_calc.c                        :+:    :+:            */
+/*   ray.h                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/18 13:33:52 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/30 13:55:20 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/03/30 15:40:57 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/03/30 15:45:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_vector t_vector
+#ifndef RAY_H
+# define RAY_H
 
-t_vector   mrt_math_norm_vector_calc(t_old_vector *vec, int magnitude)
-{
-	t_vector   norm_vector;
+# include "miniRT.h" // t_coords t_vector
 
-	norm_vector.x = (vec->head.x - vec->tail.x) / magnitude;
-	norm_vector.y = (vec->head.y - vec->tail.y) / magnitude;
-	norm_vector.z = (vec->head.z - vec->tail.z) / magnitude;
-	return (norm_vector);
-}
+// Ray object
+typedef struct s_ray {
+	t_coords	origin;
+	t_vector	direction;
+}	t_ray;
+
+t_coords	mrt_ray_colour_pos_get(t_ray *r, double t);
+
+#endif

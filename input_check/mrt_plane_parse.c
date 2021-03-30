@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/10 14:41:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/23 15:58:00 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/30 13:55:20 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	mrt_plane_parse(char **split_line, t_vars *v, int line)
 	if (size < 3)
 		mrt_error_msg(line, "Not enough values for plane");
 	mrt_coords_create(split_line[0], &plane->coords, line);
-	mrt_norm_vector_create(split_line[1], &plane->norm_vector, line);
+	mrt_vector_create(split_line[1], &plane->norm_vector, line);
 	plane->rgb = mrt_rgb_create(split_line[2], line);
 	mrt_lstadd(&v->plane, plane, line);
 }

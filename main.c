@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/29 11:23:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/30 16:52:58 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include "includes/input_check.h"
 #include "includes/screenshot.h"
 #include "includes/struct_init.h"
+#include "includes/ray.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,9 +73,56 @@ int main(int argc, char **argv)
     data.r_width = vars.res.width;
     data.r_height = vars.res.height;
 
-    mrt_bmp_create(&data);
+    // --save
+    //mrt_bmp_create(&data);
 
-    /*data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
+    t_ray ray;
+    t_coords coords;
+    ray.direction.x = 1;
+    ray.direction.y = 1;
+    ray.direction.z = 0;
+    ray.origin.x = 0;
+    ray.origin.y = 0;
+    ray.origin.z = 0;
+    coords = mrt_ray_colour_pos_get(&ray, 0);
+    printf("x:%f y:%f z:%f\n", coords.x, coords.y, coords.z);
+
+    /* The vec3 Class */
+    // Declare vec with 3 doubles
+    // Make some util functions
+    //      Vec - Vec
+    //      Vec + Vec
+    //      Vec * Vec
+    //      Vec / Vec
+    //      Vec Len
+    //      Vec Len Squared
+
+    /* The ray Class */
+    // P(t) = A + tb
+    // - P = 3D position along a line in 3D
+    // - t = ray parameter a real number??
+    // --- move t and P(t) will be a long a different point in the ray
+    // --- you can even add negative t to get anywhere
+    // - A = Ray origin
+    // - b = Ray direction
+    // Picture:
+    // t=-1     t=0     t=1     t=2
+    // <---------A-------B-------->
+
+    /* Sending rays into a scene */
+    // 1. calculate the ray from eye to screen
+    // 2. determine which objects the hits
+    // 3. compute a color for that intersection point
+    // camera center is op 0,0,0
+    // 
+
+    /*
+        vec3.test
+        
+    
+     */
+
+    data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
     data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
@@ -87,7 +135,7 @@ int main(int argc, char **argv)
     // Magnitude
 
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);*/
+    mlx_loop(data.mlx);
 
     return 0;
 }

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_math_norm_vector_calc.c                        :+:    :+:            */
+/*   mrt_ray_colour_get.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/18 13:33:52 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/30 13:55:20 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/03/30 14:35:48 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/03/30 15:54:41 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h" // t_vector t_vector
+#include "../includes/miniRT.h" // t_coords t_vector
+#include "../includes/math.h" // math functions
+#include "../includes/ray.h" // t_ray
 
-t_vector   mrt_math_norm_vector_calc(t_old_vector *vec, int magnitude)
+t_coords    mrt_ray_colour_pos_get(t_ray *r, double t)
 {
-	t_vector   norm_vector;
+    t_coords    pos;
 
-	norm_vector.x = (vec->head.x - vec->tail.x) / magnitude;
-	norm_vector.y = (vec->head.y - vec->tail.y) / magnitude;
-	norm_vector.z = (vec->head.z - vec->tail.z) / magnitude;
-	return (norm_vector);
+    pos = mrt_math_vector_multiply(&r->direction, t);
+    mrt_math_coords_add(&pos, &r->origin);
+    return (pos);
 }

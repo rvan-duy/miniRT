@@ -6,14 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/18 00:16:29 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/18 01:28:58 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/30 13:52:41 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/miniRT.h" // t_vector
 #include <math.h> // sqrt
 
-double	mrt_math_magnitude_calc(t_vector *vec)
+double	mrt_math_magnitude_calc(t_old_vector *vec)
 {
 	double	x;
 	double	y;

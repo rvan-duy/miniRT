@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 15:13:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/23 15:48:03 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/30 13:55:20 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void    mrt_comma_check(char *str, int line);
 int     mrt_rgb_create(char *str, int line);
 void    mrt_ratio_create(char *str, double *ratio, int line);
 void    mrt_coords_create(char *str, t_coords *c, int line);
-void    mrt_norm_vector_create(char *str, t_norm_vector *v, int line);
+void    mrt_vector_create(char *str, t_vector *v, int line);
 void    mrt_fov_create(char *str, int *fov, int line);
 void    mrt_diameter_create(char *str, double *diameter, int line);
 void    mrt_size_create(char *str, double *size, int line);
