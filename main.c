@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/30 16:52:58 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/03/30 17:03:15 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,8 @@ int main(int argc, char **argv)
     // 
 
     /*
-        vec3.test
-        
-    
+        ADDING A SPHERE NEXT
+        https://raytracing.github.io/books/RayTracingInOneWeekend.html
      */
 
     data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
