@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/01 13:08:54 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 14:44:14 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/01 17:11:05 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,22 @@ static double check_collision(t_coords P, t_sphere *sphere)
 {
     double radius;
     double radius_p;
+    double total;
 
     radius = sphere->diameter / 2;
     radius = radius * radius;
+    printf("radius:%f\n", radius);
     mrt_math_coords_min(&P, &sphere->coords);
+    printf("x:%f y:%f z:%f\n", P.x, P.y, P.z);
     mrt_math_coords_times(&P, &P);
-    return (P.x + P.y + P.z);
+    total = P.x + P.y + P.z;
+    printf("total:%f\n", total);
+    if (total < radius)
+        return (1);
+    if (total == radius)
+        return (0);
+    if (total > radius)
+        return (-1);
 }
 
 double  mrt_ray_sphere(t_coords P, t_list *list)

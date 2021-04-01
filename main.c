@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 14:34:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/01 17:16:40 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     // --save
     //mrt_bmp_create(&data);
 
-    t_ray ray;
+    /*t_ray ray;
     t_coords coords;
     int t = RAY_LEN_MIN;
     ray.direction.x = 1;
@@ -85,27 +85,21 @@ int main(int argc, char **argv)
     ray.origin.x = 0;
     ray.origin.y = 0;
     ray.origin.z = 0;
-    int hit_someting = FALSE;
+    int hit_someting = FALSE;*/
+    
 
     // Shooting a single ray at the direction of ray.direction
     // ray is a struct containing info about ray: origin & direction
     // t is used to loop through the ray
-    /*while (hit_someting == FALSE || t <= RAY_LEN_MAX)
-    {
-        // Get ray position based on the origin, direction and t
-        coords = mrt_ray_pos_get(&ray, t);
-        printf("x:%f y:%f z:%f\n", coords.x, coords.y, coords.z);
-        // Check if coords is inside the sphere
-        if ()
-        t++;
-    }
-    if (hit_someting == TRUE)
-    {
-        printf("Ray hit sphere 1\n");
-        
-    }*/
-    
-    
+    t_ray ray;
+    ray.direction.x = 0;
+    ray.direction.y = 0;
+    ray.direction.z = 1;
+    ray.origin.x = 0;
+    ray.origin.y = 0;
+    ray.origin.z = 0;
+    double ret = mrt_ray_collision_check(&ray, &vars);
+    printf("ret:%f\n", ret);
 
     /* The vec3 Class */
     // Declare vec with 3 doubles
