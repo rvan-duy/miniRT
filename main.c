@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/30 22:40:05 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/01 00:22:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,10 @@ int main(int argc, char **argv)
     ray.origin.x = 0;
     ray.origin.y = 0;
     ray.origin.z = 0;
-    coords = mrt_ray_colour_pos_get(&ray, 0);
+    coords = mrt_ray_color_pos_get(&ray, -1);
     printf("x:%f y:%f z:%f\n", coords.x, coords.y, coords.z);
+
+    
 
     /* The vec3 Class */
     // Declare vec with 3 doubles
@@ -122,6 +124,7 @@ int main(int argc, char **argv)
      */
 
     /* double check parser what if cylinder comes before camera */
+
 
     data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
