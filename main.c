@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 00:22:26 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/01 14:34:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,33 @@ int main(int argc, char **argv)
 
     t_ray ray;
     t_coords coords;
+    int t = RAY_LEN_MIN;
     ray.direction.x = 1;
     ray.direction.y = 1;
     ray.direction.z = 0;
     ray.origin.x = 0;
     ray.origin.y = 0;
     ray.origin.z = 0;
-    coords = mrt_ray_color_pos_get(&ray, -1);
-    printf("x:%f y:%f z:%f\n", coords.x, coords.y, coords.z);
+    int hit_someting = FALSE;
 
+    // Shooting a single ray at the direction of ray.direction
+    // ray is a struct containing info about ray: origin & direction
+    // t is used to loop through the ray
+    /*while (hit_someting == FALSE || t <= RAY_LEN_MAX)
+    {
+        // Get ray position based on the origin, direction and t
+        coords = mrt_ray_pos_get(&ray, t);
+        printf("x:%f y:%f z:%f\n", coords.x, coords.y, coords.z);
+        // Check if coords is inside the sphere
+        if ()
+        t++;
+    }
+    if (hit_someting == TRUE)
+    {
+        printf("Ray hit sphere 1\n");
+        
+    }*/
+    
     
 
     /* The vec3 Class */
@@ -126,7 +144,7 @@ int main(int argc, char **argv)
     /* double check parser what if cylinder comes before camera */
 
 
-    data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
+    /*data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
     data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
@@ -139,7 +157,7 @@ int main(int argc, char **argv)
     // Magnitude
 
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);
+    mlx_loop(data.mlx);*/
 
     return 0;
 }

@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/04/01 00:22:34 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/04/01 14:34:00 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ SRCS = main.c \
 		print/mrt_rt_file_print.c \
 		screenshot/mrt_bmp_create.c \
 		math/mrt_math_vector_operators.c \
-		ray/mrt_ray_color_get.c \
+		math/mrt_math_coords_operators.c \
+		ray/mrt_ray_pos_get.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function

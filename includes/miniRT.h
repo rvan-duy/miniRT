@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/30 15:41:45 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/01 12:55:28 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # define TRUE 1
 # define FALSE 0
 # define p printf
+# define RAY_LEN_MAX 1000
+# define RAY_LEN_MIN -1000
 
 // X11 Events
 # define KeyPress 2
