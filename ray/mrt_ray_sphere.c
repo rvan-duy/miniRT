@@ -6,13 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/01 13:08:54 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 17:11:05 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/02 20:21:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ray.h"
 #include "../includes/miniRT.h"
 #include "../includes/math.h"
+#include <stdio.h>
 
 // Function checks if a P collides with a sphere:
 // ret < 0 if it does not collide a sphere

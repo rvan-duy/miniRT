@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 17:12:39 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/02 20:37:34 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define TRUE 1
 # define FALSE 0
 # define p printf
-# define RAY_LEN_MAX 10
+# define RAY_LEN_MAX 100
 # define RAY_LEN_MIN 0
 
 // X11 Events
@@ -50,18 +50,13 @@ typedef struct s_coords {
 	double	z;
 }	t_coords;
 
+typedef t_coords t_vector;
+
 // 3D vector (old for magnitude/norm etc)
 typedef struct s_old_vector {
 	t_coords	tail;
 	t_coords	head;
 }	t_old_vector;
-
-// 3D normalized vector
-typedef struct s_vector {
-	double	x;
-	double	y;
-	double	z;
-}	t_vector;
 
 // Camera object
 typedef struct s_camera {

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 17:16:40 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/02 20:40:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,16 @@ int main(int argc, char **argv)
     // ray is a struct containing info about ray: origin & direction
     // t is used to loop through the ray
     t_ray ray;
-    ray.direction.x = 0;
-    ray.direction.y = 0;
-    ray.direction.z = 1;
+    ray.direction.x = 18;
+    ray.direction.y = 10;
+    ray.direction.z = 0;
     ray.origin.x = 0;
     ray.origin.y = 0;
     ray.origin.z = 0;
+    double magnitude = mrt_math_magnitude_calc(&ray.direction, &ray.origin);
+    //printf("magnitude:%f\n", magnitude);
+    mrt_math_norm_vector_calc(&ray.direction, &ray.origin, magnitude);
+    //printf("x:%f y:%f z:%f\n", ray.direction.x, ray.direction.y, ray.direction.z);
     double ret = mrt_ray_collision_check(&ray, &vars);
     printf("ret:%f\n", ret);
 

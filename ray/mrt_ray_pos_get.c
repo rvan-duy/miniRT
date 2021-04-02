@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_ray_color_get.c                                :+:    :+:            */
+/*   mrt_ray_pos_get.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/30 14:35:48 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/01 12:58:06 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/02 20:21:21 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_coords    mrt_ray_pos_get(t_ray *r, double t)
 {
     t_coords    pos;
 
-    pos = mrt_math_vector_multiply(&r->direction, t);
+    pos = mrt_math_coords_multiply(&r->direction, t);
     mrt_math_coords_add(&pos, &r->origin);
     return (pos);
 }
