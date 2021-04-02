@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/04/02 20:18:31 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/04/03 00:04:14 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS = main.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
 		print/mrt_rt_file_print.c \
+		print/mrt_print_coords.c \
 		screenshot/mrt_bmp_create.c \
 		ray/mrt_ray_pos_get.c \
 		ray/mrt_ray_collision_check.c \

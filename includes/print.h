@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ray.h                                              :+:    :+:            */
+/*   print.h                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/30 15:40:57 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/02 23:48:09 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/04/03 00:02:59 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/04/03 00:03:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RAY_H
-# define RAY_H
+#ifndef PRINT_H
+# define PRINT_H
 
-# include "miniRT.h" // t_coords t_vector
+#include "miniRT.h" // t_coords
 
-// Ray object
-typedef struct s_ray {
-	t_coords	origin;
-	t_vector	direction;
-}	t_ray;
-
-t_coords	mrt_ray_pos_get(t_ray *r, double t);
-int			mrt_ray_collision_check(t_ray *ray, t_vars *var);
-int			mrt_ray_sphere(t_vector *v, t_list *list);
-
+void    mrt_print_coords(t_coords *c);
 
 #endif

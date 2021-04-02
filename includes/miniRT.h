@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/02 20:37:34 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/02 23:56:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define TRUE 1
 # define FALSE 0
 # define p printf
-# define RAY_LEN_MAX 100
+# define RAY_LEN_MAX 1000
 # define RAY_LEN_MIN 0
 
 // X11 Events
