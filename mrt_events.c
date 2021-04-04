@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/23 12:16:51 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/04 10:16:54 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 //#include "mlx_linux/mlx.h" // mlx functions
 #include "mlx/mlx.h" // mlx functions
 #include "includes/color.h" // shade
+#include "includes/ray.h"
 #include <stdio.h> // printf
 #include <stdlib.h> // exit
 
@@ -54,20 +55,43 @@ void    mrt_draw_shade(t_data *v, int color)
     }
 }
 
-void    mrt_ambient_draw(t_data *v)
+void    mrt_ray_shoot(t_vars *var, int width, int height)
 {
     int x;
     int y;
-    t_vars vars;
+    double u;
+    double v;
+    t_ray ray;
+    t_camera *camera_1;
 
-    vars = v->vars;
-    x = 0;
-    while (x < vars.res.width)
+    camera_1 = var->cam->content;
+    ray.origin = mrt_math_coords_create(0, 0, 0);
+
+    double  aspect_ratio = 16.0 / 9.0;
+
+    double  viewport_height = 2.0;
+    double  viewport_width = aspect_ratio * viewport_height;
+    double  focal_length = 1.0;
+
+    t_coords    horizontal = mrt_math_coords_create(viewport_width, 0, 0);
+    t_coords    vertical = mrt_math_coords_create(0, viewport_height, 0);
+    t_coords    focal_len_coords = mrt_math_coords_create(0, 0, focal_length);
+    mrt_math_coords_divide(&horizontal, 2);
+    mrt_math_coords_divide(&vertical, 2);
+    mrt_math_coords_min(&ray.origin, &horizontal);
+    mrt_math_coords_min(&ray.origin, &vertical);
+    mrt_math_coords_min(&ray.origin, &focal_len_coords);
+
+    y = 0;
+    while (y < (height - 1))
     {
-        y = 0;
-        while (y < vars.res.height)
+        x = 0;
+        while (x < width)
         {
-            my_mlx_pixel_put(v, x, y, vars.ambient.rgb);
+            u = (double)x / (width - 1);
+            v = (double)y / (height - 1);
+            ray.direction = 
+            my_mlx_pixel_put(var, x, y, var->ambient.rgb);
             y++;
         }
         x++;
@@ -76,7 +100,7 @@ void    mrt_ambient_draw(t_data *v)
 
 int mrt_frame_render(t_data *v)
 {
-    mrt_ambient_draw(v);
+    mrt_ray_shoot(&v->vars, v->r_width, v->r_height);
     //mrt_draw_shade(v, 0xFFFFFF);
     mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
     return (1);

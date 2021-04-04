@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/30 13:56:29 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/02 20:18:05 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/04 10:11:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ t_coords    mrt_math_coords_multiply(t_coords *v, double i)
     pos.y = v->y * i;
     pos.z = v->z * i;
     return (pos);
+}
+
+void    mrt_math_coords_divide(t_coords *v, double i)
+{
+    v->x /= i;
+    v->y /= i;
+    v->z /= i;
+    return ;
 }
 
 void    mrt_math_coords_add(t_coords *v1, t_coords *v2)
@@ -46,6 +54,16 @@ void    mrt_math_coords_times(t_coords *v1, t_coords *v2)
     v1->y *= v2->y;
     v1->z *= v2->z;
     return ;
+}
+
+t_coords    mrt_math_coords_create(double x, double y, double z)
+{
+    t_coords coords;
+
+    coords.x = x;
+    coords.y = y;
+    coords.z = z;
+    return (coords);
 }
 
 /*

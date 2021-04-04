@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/02 23:47:29 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/04 09:37:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ int main(int argc, char **argv)
     // Shooting a single ray at the direction of ray.direction
     // ray is a struct containing info about ray: origin & direction
     // t is used to loop through the ray
-    t_ray ray;
+    
+    /*t_ray ray;
     ray.direction.x = -21;
     ray.direction.y = -10;
     ray.direction.z = 0;
@@ -103,7 +104,7 @@ int main(int argc, char **argv)
     mrt_math_norm_vector_calc(&ray.direction, &ray.origin, magnitude);
     //printf("x:%f y:%f z:%f\n", ray.direction.x, ray.direction.y, ray.direction.z);
     int ret = mrt_ray_collision_check(&ray, &vars);
-    printf("ret:%d\n", ret);
+    printf("ret:%d\n", ret);*/
 
     /* The vec3 Class */
     // Declare vec with 3 doubles
@@ -142,20 +143,20 @@ int main(int argc, char **argv)
     /* double check parser what if cylinder comes before camera */
 
 
-    /*data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
+    data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
     data.addr = mlx_get_data_addr(data.img, &data.bit_per_pixel, &data.line_length, &data.endian);
 
     // Hook
     mlx_loop_hook(data.mlx, mrt_frame_render, &data);
     mlx_hook(data.win, KeyPress, KeyPressMask, mrt_key_press, &data);
-    mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
+    //mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
 
     // Vector: is a line segment running from point A (tail) to point B (head)
     // Magnitude
 
     //mlx_hook(data.win, 17, (0L), close_program, &data);
-    mlx_loop(data.mlx);*/
+    mlx_loop(data.mlx);
 
     return 0;
 }
