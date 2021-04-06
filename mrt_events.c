@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/06 15:07:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 17:24:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void    mrt_draw_shade(t_data *v, int color)
 
 void    mrt_ray_shoot(t_vars *var)
 {
-    int x;
-    int y;
+    int i;
+    int j;
     double u;
     double v;
     t_ray ray;
@@ -68,23 +68,24 @@ void    mrt_ray_shoot(t_vars *var)
 
     camera_1 = var->cam->content;
     ray.origin = mrt_math_coords_create(0, 0, 0);
+    ray.origin = camera_1->coords;
     lower_left_corner = mrt_ray_left_corner_calc(var, &ray);
 
-    /*
-    y = 0;
-    while (y < (height - 1))
+    j = var->res.height - 1;
+    while (j >= 0)
     {
-        x = 0;
-        while (x < width)
+        i = 0;
+        while (i < var->res.width)
         {
-            u = (double)x / (width - 1);
-            v = (double)y / (height - 1);
-            ray.direction = 
-            my_mlx_pixel_put(var, x, y, var->ambient.rgb);
-            y++;
+            u = (double)i / (var->res.width - 1);
+            v = (double)j / (var->res.height - 1);
+            // create the ray
+            // get the colour of the ray
+            // put colour to pixel!!!!   //my_mlx_pixel_put(var, x, y, var->ambient.rgb);
+            i++;
         }
-        x++;
-    }*/
+        j++;
+    }
 }
 
 int mrt_frame_render(t_data *v)

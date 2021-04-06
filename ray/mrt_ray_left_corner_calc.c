@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/06 13:54:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/06 16:10:24 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 17:09:12 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ t_coords	mrt_ray_left_corner_calc(t_vars *v, t_ray *ray)
 	mrt_math_coords_min_divide(&lower_left_corner, horizontal, 2);
 	mrt_math_coords_min_divide(&lower_left_corner, vertical, 2);
 	mrt_math_coords_min(&lower_left_corner, &focal_len_coords);
-	mrt_print_coords(lower_left_corner, "lower_left_corner");
 	return (lower_left_corner);
 }
