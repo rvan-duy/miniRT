@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/04/03 00:04:14 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/04/06 12:26:11 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS = main.c \
 		math/mrt_math_magnitude_calc.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
+		math/mrt_math_aspect_ratio.c \
 		print/mrt_rt_file_print.c \
 		print/mrt_print_coords.c \
 		screenshot/mrt_bmp_create.c \
@@ -53,20 +54,20 @@ LIBFT = libft.a
 all: $(NAME)
 
 #MacOS
-#%.o: %.c
-#$(CC) $(UNUSED) -Imlx -c $< -o $@
-
-#Linux
 %.o: %.c
-	$(CC) $(UNUSED) -c $< -o $@
+	$(CC) $(UNUSED) -Imlx -c $< -o $@
 
 #Linux
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+#%.o: %.c
+#$(CC) $(UNUSED) -c $< -o $@
+
+#Linux
+#$(NAME): $(OBJ)
+#$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 
 #MacOS
-#$(NAME): $(OBJ)
-#$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	@/bin/rm -f *.o

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/30 13:56:29 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/04 10:11:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 13:09:28 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ void    mrt_math_coords_min(t_coords *v1, t_coords *v2)
     v1->y -= v2->y;
     v1->z -= v2->z;
     return ;
+}
+
+void    mrt_math_coords_min_divide(t_coords *v1, t_coords v2, double i)
+{
+    v1->x -= v2.x / i;
+    v1->y -= v2.y / i;
+    v1->z -= v2.z / i;
 }
 
 void    mrt_math_coords_times(t_coords *v1, t_coords *v2)

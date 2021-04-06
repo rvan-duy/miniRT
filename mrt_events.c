@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/04 10:16:54 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 13:13:30 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 //#include "mlx_linux/mlx.h" // mlx functions
 #include "mlx/mlx.h" // mlx functions
 #include "includes/color.h" // shade
+#include "includes/print.h"
 #include "includes/ray.h"
 #include <stdio.h> // printf
 #include <stdlib.h> // exit
@@ -67,7 +68,7 @@ void    mrt_ray_shoot(t_vars *var, int width, int height)
     camera_1 = var->cam->content;
     ray.origin = mrt_math_coords_create(0, 0, 0);
 
-    double  aspect_ratio = 16.0 / 9.0;
+    double  aspect_ratio = mrt_math_aspect_ratio(var->res.width, var->res.height);
 
     double  viewport_height = 2.0;
     double  viewport_width = aspect_ratio * viewport_height;
@@ -76,12 +77,16 @@ void    mrt_ray_shoot(t_vars *var, int width, int height)
     t_coords    horizontal = mrt_math_coords_create(viewport_width, 0, 0);
     t_coords    vertical = mrt_math_coords_create(0, viewport_height, 0);
     t_coords    focal_len_coords = mrt_math_coords_create(0, 0, focal_length);
+    t_coords    lower_left_corner = ray.origin;
+    mrt_math_coords_min_divide(&lower_left_corner, horizontal, 2);
+    mrt_math_coords_min_divide(&lower_left_corner, vertical, 2);
+    mrt_math_coords_min(&lower_left_corner, &focal_len_coords);
+
     mrt_math_coords_divide(&horizontal, 2);
     mrt_math_coords_divide(&vertical, 2);
-    mrt_math_coords_min(&ray.origin, &horizontal);
-    mrt_math_coords_min(&ray.origin, &vertical);
-    mrt_math_coords_min(&ray.origin, &focal_len_coords);
-
+    
+    mrt_print_coords(lower_left_corner);
+    // lower left corner pik niet origin dussssss man man man
     y = 0;
     while (y < (height - 1))
     {

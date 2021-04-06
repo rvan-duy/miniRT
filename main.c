@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/04 09:37:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 11:04:12 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,9 @@ int main(int argc, char **argv)
 
     /* double check parser what if cylinder comes before camera */
 
+    /* Rendering a pixel based on the ray */
+    // 1. Calculate aspect ratio
+    // 2. 
 
     data.win = mlx_new_window(data.mlx, data.r_width, data.r_height, "Hello World");
     data.img = mlx_new_image(data.mlx, data.r_width, data.r_height);
