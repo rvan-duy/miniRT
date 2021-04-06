@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/04/06 12:26:11 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/04/06 15:06:15 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS = main.c \
 		ray/mrt_ray_pos_get.c \
 		ray/mrt_ray_collision_check.c \
 		ray/mrt_ray_sphere.c \
+		ray/mrt_ray_left_corner_calc.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function

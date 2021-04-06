@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/06 13:13:30 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 15:07:28 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int mrt_key_press(int keycode)
 {
-    if (keycode == 65307)
+    if (keycode == 65307 || keycode == 53)
     {
         printf("Key pressed: ESC (%d)\n", keycode);
         mrt_program_close();
@@ -56,7 +56,7 @@ void    mrt_draw_shade(t_data *v, int color)
     }
 }
 
-void    mrt_ray_shoot(t_vars *var, int width, int height)
+void    mrt_ray_shoot(t_vars *var)
 {
     int x;
     int y;
@@ -64,29 +64,13 @@ void    mrt_ray_shoot(t_vars *var, int width, int height)
     double v;
     t_ray ray;
     t_camera *camera_1;
+    t_coords lower_left_corner;
 
     camera_1 = var->cam->content;
     ray.origin = mrt_math_coords_create(0, 0, 0);
+    lower_left_corner = mrt_ray_left_corner_calc(var, &ray);
 
-    double  aspect_ratio = mrt_math_aspect_ratio(var->res.width, var->res.height);
-
-    double  viewport_height = 2.0;
-    double  viewport_width = aspect_ratio * viewport_height;
-    double  focal_length = 1.0;
-
-    t_coords    horizontal = mrt_math_coords_create(viewport_width, 0, 0);
-    t_coords    vertical = mrt_math_coords_create(0, viewport_height, 0);
-    t_coords    focal_len_coords = mrt_math_coords_create(0, 0, focal_length);
-    t_coords    lower_left_corner = ray.origin;
-    mrt_math_coords_min_divide(&lower_left_corner, horizontal, 2);
-    mrt_math_coords_min_divide(&lower_left_corner, vertical, 2);
-    mrt_math_coords_min(&lower_left_corner, &focal_len_coords);
-
-    mrt_math_coords_divide(&horizontal, 2);
-    mrt_math_coords_divide(&vertical, 2);
-    
-    mrt_print_coords(lower_left_corner);
-    // lower left corner pik niet origin dussssss man man man
+    /*
     y = 0;
     while (y < (height - 1))
     {
@@ -100,12 +84,12 @@ void    mrt_ray_shoot(t_vars *var, int width, int height)
             y++;
         }
         x++;
-    }
+    }*/
 }
 
 int mrt_frame_render(t_data *v)
 {
-    mrt_ray_shoot(&v->vars, v->r_width, v->r_height);
+    mrt_ray_shoot(&v->vars);
     //mrt_draw_shade(v, 0xFFFFFF);
     mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
     return (1);
