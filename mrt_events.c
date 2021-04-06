@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/06 17:24:23 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/06 18:38:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void    mrt_ray_shoot(t_vars *var)
     t_coords lower_left_corner;
 
     camera_1 = var->cam->content;
-    ray.origin = mrt_math_coords_create(0, 0, 0);
     ray.origin = camera_1->coords;
     lower_left_corner = mrt_ray_left_corner_calc(var, &ray);
 
@@ -80,6 +79,7 @@ void    mrt_ray_shoot(t_vars *var)
             u = (double)i / (var->res.width - 1);
             v = (double)j / (var->res.height - 1);
             // create the ray
+            mrt_ray_direction_create(lower_left_corner, &ray, u, v, &var->res);           
             // get the colour of the ray
             // put colour to pixel!!!!   //my_mlx_pixel_put(var, x, y, var->ambient.rgb);
             i++;
