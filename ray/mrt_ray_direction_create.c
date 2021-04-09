@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/06 18:04:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/09 17:39:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/09 17:58:49 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 // lower_left_corner: -1.777778, -1, -1
 // u:                 0.500261
 // v:                 0.500463
-// horizontal:        1.777778, 0, 0
+// horizontal:        3.55556, 0, 0
 // vertical:          0, 2, 0
 // origin:            0,0,0
 
