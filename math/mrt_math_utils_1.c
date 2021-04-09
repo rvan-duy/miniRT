@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/30 13:56:29 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/06 15:10:19 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/09 17:44:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 // This prob needs to be redone, need load of em just make em at will
 
-t_coords    mrt_math_coords_multiply(t_coords *v, double i)
+void    mrt_math_coords_multiply(t_coords *v, double i)
 {
-    t_coords pos;
-
-    pos.x = v->x * i;
-    pos.y = v->y * i;
-    pos.z = v->z * i;
-    return (pos);
+    v->x *= i;
+    v->y *= i;
+    v->z *= i;
+    return ;
 }
 
 void    mrt_math_coords_divide(t_coords *v, double i)
@@ -32,19 +30,19 @@ void    mrt_math_coords_divide(t_coords *v, double i)
     return ;
 }
 
-void    mrt_math_coords_add(t_coords *v1, t_coords *v2)
+void    mrt_math_coords_add(t_coords *c1, t_coords c2)
 {
-    v1->x += v2->x;
-    v1->y += v2->y;
-    v1->z += v2->z;
+    c1->x += c2.x;
+    c1->y += c2.y;
+    c1->z += c2.z;
     return ;
 }
 
-void    mrt_math_coords_min(t_coords *v1, t_coords *v2)
+void    mrt_math_coords_min(t_coords *c1, t_coords c2)
 {
-    v1->x -= v2->x;
-    v1->y -= v2->y;
-    v1->z -= v2->z;
+    c1->x -= c2.x;
+    c1->y -= c2.y;
+    c1->z -= c2.z;
     return ;
 }
 
