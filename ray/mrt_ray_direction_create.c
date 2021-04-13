@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/06 18:04:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/09 17:58:49 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/13 15:05:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,14 @@
 // vertical:          0, 2, 0
 // origin:            0,0,0
 
-void    mrt_ray_direction_calc(t_ray *ray, t_ray_vars *rv, t_vars *v)
+t_vector    mrt_ray_direction_calc(t_ray *ray, t_ray_vars *rv)
 {
-    ray->direction = rv->lower_left_corner;
-    printf("v:%f u:%f\n", rv->v, rv->u);
-    mrt_print_coords(ray->direction, "1");
-    mrt_print_coords(rv->viewport.horizontal, "2v1");
-    mrt_print_coords(rv->viewport.vertical, "3v1");
-    mrt_math_coords_multiply(&rv->viewport.horizontal, rv->u);
-    mrt_math_coords_multiply(&rv->viewport.vertical, rv->v);
-    mrt_print_coords(rv->viewport.horizontal, "2");
-    mrt_print_coords(rv->viewport.vertical, "3");
-    mrt_math_coords_add(&ray->direction, rv->viewport.horizontal);
-    mrt_print_coords(ray->direction, "4");
-    mrt_math_coords_add(&ray->direction, rv->viewport.vertical);
-    mrt_print_coords(ray->direction, "5");
-    mrt_math_coords_min(&ray->direction, &ray->origin);
-    return ;
+    t_vector    direction;
+
+    direction = mrt_math_coords_create(0, 0, 0);
+    direction = mrt_math_coords_add(direction, rv->lower_left_corner);
+    direction = mrt_math_coords_add(direction, mrt_math_coords_multiply(rv->viewport.horizontal, rv->u));
+    direction = mrt_math_coords_add(direction, mrt_math_coords_multiply(rv->viewport.vertical, rv->v));
+    direction = mrt_math_coords_min(direction, ray->origin);
+    return (direction);
 }

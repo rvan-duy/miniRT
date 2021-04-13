@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/01 13:08:54 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/02 23:48:17 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/13 12:02:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ static double	check_point(t_vector *v, t_coords *sphere_center)
 	return (x + y + z);
 }
 
+// 1 if hit
+// 0 if exactly on border
+// -1 if it doesn't hit
 static int	check_collision(t_vector *v, t_sphere *sphere)
 {
 	double	check;
@@ -43,8 +46,7 @@ static int	check_collision(t_vector *v, t_sphere *sphere)
 		return (1);
 	if (check == radius_pow)
 		return (0);
-	if (check > radius_pow)
-		return (-1);
+	return (-1);
 }
 
 int	mrt_ray_sphere(t_vector *v, t_list *list)

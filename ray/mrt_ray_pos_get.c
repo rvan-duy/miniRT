@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/30 14:35:48 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/09 21:12:48 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/13 14:25:54 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #include "../includes/math.h" // math functions
 #include "../includes/ray.h" // t_ray
 
-void    mrt_ray_pos_get(t_coords *pos, t_ray *r, double t)
+t_coords    mrt_ray_pos_get(t_ray *r, double i)
 {
-    *pos = r->direction;
-    mrt_math_coords_multiply(pos, t);
-    mrt_math_coords_add(pos, r->origin);
-    return ;
+    t_coords    new_pos;
+
+    new_pos = r->direction;
+    new_pos = mrt_math_coords_multiply(new_pos, i);
+    new_pos = mrt_math_coords_add(new_pos, r->origin);
+    return (new_pos);
 }
