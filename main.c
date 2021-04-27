@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/20 12:37:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/27 14:21:51 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,21 @@ void    mrt_draw_cross(t_data *v, int color)
 int main(int argc, char **argv)
 {
     t_data  data;
-    t_vars  vars;
 
     // Initializing needs to be redones
-    ft_bzero(&vars, sizeof(t_vars));
     ft_bzero(&data, sizeof(t_data));
-    mrt_vars_init(&vars);
+    mrt_vars_init(&data.vars);
 
     // Doing extensive input checks
-    mrt_input_check(argc, argv, &vars);
-    data.vars = vars;
+    mrt_input_check(argc, argv, &data.vars);
 
     // Initializing the mlx library, can return NULL if it goes wrong.
     data.mlx = mlx_init();
     if (!data.mlx)
         return (0);
 
-    data.r_width = vars.res.width;
-    data.r_height = vars.res.height;
+    data.r_width = data.vars.res.width;
+    data.r_height = data.vars.res.height;
 
     // --save
     //mrt_bmp_create(&data);
@@ -153,6 +150,7 @@ int main(int argc, char **argv)
     // Hook
     mlx_loop_hook(data.mlx, mrt_frame_render, &data);
     mlx_hook(data.win, KeyPress, KeyPressMask, mrt_key_press, &data);
+    mlx_hook(data.win, DestroyNotify, StructureNotifyMask, mrt_program_close, &data);
     //mlx_hook(data.win, MotionNotify, PointerMotionMask, mrt_mouse_motion, &data);
 
     // Vector: is a line segment running from point A (tail) to point B (head)

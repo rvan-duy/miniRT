@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/20 12:37:04 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/27 11:13:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@
 // X11 Events
 # define KeyPress 2
 # define MotionNotify 6
+# define DestroyNotify 17
 
 // X11 Masks
 # define KeyPressMask 1L<<0
 # define PointerMotionMask 1L<<6
+# define StructureNotifyMask 1L<<17
 
 # include "libft.h" // t_list
 
@@ -146,8 +148,8 @@ void	mrt_draw_cross(t_data *v, int color);
 
 // Events
 int		mrt_frame_render(t_data *v);
-int		mrt_key_press(int keycode);
+int		mrt_key_press(int keycode, t_data *data);
 int		mrt_mouse_motion(int x, int y, t_data *v);
-int		mrt_program_close();
+int		mrt_program_close(t_data *data);
 
 #endif

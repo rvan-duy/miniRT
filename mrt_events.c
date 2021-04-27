@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/26 16:55:03 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/27 11:12:37 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 #include <stdio.h> // printf
 #include <stdlib.h> // exit
 
-int mrt_key_press(int keycode)
+int mrt_key_press(int keycode, t_data *data)
 {
     if (keycode == 65307 || keycode == 53)
     {
         printf("Key pressed: ESC (%d)\n", keycode);
-        mrt_program_close();
+        mrt_program_close(data);
     }
     printf("Key pressed: %d\n", keycode);
     return (1);
@@ -114,8 +114,9 @@ int mrt_frame_render(t_data *data)
     return (1);
 }
 
-int mrt_program_close()
+int mrt_program_close(t_data *data)
 {
+    mlx_destroy_window(data->mlx, data->win);
     printf("Closing program..\n");
     exit(0);
     return (1);
