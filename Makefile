@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/04/13 11:08:42 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/04/26 11:57:53 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS = main.c \
 		screenshot/mrt_bmp_create.c \
 		ray/mrt_ray_pos_get.c \
 		ray/mrt_ray_vars_init.c \
-		ray/mrt_ray_direction_create.c \
+		ray/mrt_ray_direction_calc.c \
 		ray/mrt_ray_collision_check.c \
 		ray/mrt_ray_sphere.c \
 		mrt_events.c

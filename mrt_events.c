@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/13 18:07:40 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/26 16:55:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void    mrt_ray_shoot(t_data *data)
     ray.origin = camera->coords;
     //mrt_print_coords(ray_vars.lower_left_corner, "lower_left_corner");
     y = data->vars.res.height - 1;
+    int color = 0xBC002D;
     while (y >= 0)
     {
         //y = 540;
@@ -86,8 +87,17 @@ void    mrt_ray_shoot(t_data *data)
             //mrt_print_coords(ray.direction, "ray");
             //printf("x:%d y:%d\n", x, y);
             //printf("x_max:%d\n", data->vars.res.width);
+            //mrt_print_coords(ray.direction, "direction");
+            //mrt_print_coords(ray.origin, "origin");
             if (mrt_ray_collision_check(&ray, &data->vars) >= 0)
-                my_mlx_pixel_put(data, x, y, 0xBC002D);
+            {
+                mrt_color_shade_add(0.0001, &color);
+                if (color == 0)
+                    color = 0xFFFFFF;
+                //p("%X\n", color);
+                //exit(0);
+                my_mlx_pixel_put(data, x, y, color);
+            }
             else
                 my_mlx_pixel_put(data, x, y, 0xFFFFFF);
             x++;

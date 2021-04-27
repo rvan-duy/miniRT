@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/01 13:08:54 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/13 12:02:03 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/26 11:34:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../includes/miniRT.h"
 #include "../includes/math.h"
 #include <math.h>
+#include <stdio.h>
 
 // Function checks if a vector collides with a sphere:
 // ret < 0 if it does not collide a sphere
@@ -42,10 +43,17 @@ static int	check_collision(t_vector *v, t_sphere *sphere)
 
 	check = check_point(v, &sphere->coords);
 	radius_pow = (sphere->diameter / 2) * (sphere->diameter / 2);
+	//printf("check:%f radios_pow:%f\n", check, radius_pow);
 	if (check < radius_pow)
+	{
+		//printf("check:%f\n", check);
 		return (1);
+	}
 	if (check == radius_pow)
+	{
+		//printf("check:%f\n", check);
 		return (0);
+	}
 	return (-1);
 }
 

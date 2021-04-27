@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/13 14:29:41 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/20 12:37:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
     t_data  data;
     t_vars  vars;
 
-    // Initializing needs to be redone
+    // Initializing needs to be redones
     ft_bzero(&vars, sizeof(t_vars));
     ft_bzero(&data, sizeof(t_data));
     mrt_vars_init(&vars);
