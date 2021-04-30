@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/26 15:29:16 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/27 13:15:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/04/30 16:40:06 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ double	deg_to_rad(double degrees)
 
 int main()
 {
-    double x = 45;
+    double x = 35;
     double y = deg_to_rad(x);
 
     printf("tan(%.0f°) is: %f\n", x, tan(x));
+    printf("tan(%.0f) is: %f\n", y, tan(y));
     return 1;
 }
