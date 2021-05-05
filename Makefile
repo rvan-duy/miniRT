@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/04/26 11:57:53 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/05 18:20:44 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,9 @@ SRCS = main.c \
 		color/mrt_color_get.c \
 		color/mrt_color_shade_add.c \
 		color/mrt_color_invert.c \
+		coords/mrt_tuple_create.c \
+		coords/mrt_point_create.c \
+		coords/mrt_vector_create.c \
 		math/mrt_math_magnitude_calc.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
@@ -46,6 +49,7 @@ SRCS = main.c \
 		ray/mrt_ray_direction_calc.c \
 		ray/mrt_ray_collision_check.c \
 		ray/mrt_ray_sphere.c \
+		unit_tests/mrt_unit_tests_start.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function

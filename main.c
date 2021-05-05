@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/27 14:21:51 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/05 18:12:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "includes/screenshot.h"
 #include "includes/struct_init.h"
 #include "includes/ray.h"
+#include "includes/unit_tests.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,6 +56,7 @@ int main(int argc, char **argv)
 {
     t_data  data;
 
+    mrt_unit_tests_start();
     // Initializing needs to be redones
     ft_bzero(&data, sizeof(t_data));
     mrt_vars_init(&data.vars);

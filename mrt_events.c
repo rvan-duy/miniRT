@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/27 11:12:37 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/04 18:02:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int mrt_key_press(int keycode, t_data *data)
 int mrt_mouse_motion(int x, int y, t_data *v)
 {
     printf("x: %i y: %i\n", x, y);
-    my_mlx_pixel_put(v, x, y, 0xFFFFFF);
+    //my_mlx_pixel_put(v, x, y, 0xFFFFFF);
     return (1);
 }
 
@@ -81,8 +81,8 @@ void    mrt_ray_shoot(t_data *data)
         x = 0;
         while (x < data->vars.res.width)
         {
-            ray_vars.u = (double)x / (data->vars.res.width - 1);
-            ray_vars.v = (double)y / (data->vars.res.height - 1);
+            ray_vars.u = ((double)x + 0.5) / (data->vars.res.width - 1) * 0.9;
+            ray_vars.v = ((double)y + 0.5) / (data->vars.res.height - 1) * 0.9;
             ray.direction = mrt_ray_direction_calc(&ray, &ray_vars);
             //mrt_print_coords(ray.direction, "ray");
             //printf("x:%d y:%d\n", x, y);

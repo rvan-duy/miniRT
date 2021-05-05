@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/16 11:00:46 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/03/23 16:05:58 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/03 13:06:30 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,7 +194,7 @@ static void	mrt_rt_file_print_triangle(t_vars *v)
 		p("\t\tcoords_3:\t");
 		p("x\t%f\n\t\t\t\ty\t%f\n\t\t\t", tmp->coords_3.x, tmp->coords_3.y);
 		p("\tz\t%f\n", tmp->coords_3.z);
-		p("\t\trgb:\t\t%X\n", tmp->rgb);
+		p("\t\trgb:\t\t\t%X\n", tmp->rgb);
 		v->triangle = v->triangle->next;
 		i++;
 	}
