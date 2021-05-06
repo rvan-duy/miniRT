@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/24 10:54:56 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/05 18:12:09 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/06 18:51:29 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ int main(int argc, char **argv)
 {
     t_data  data;
 
+    // this function starts unit tests instead of the raytracer
     mrt_unit_tests_start();
+    
     // Initializing needs to be redones
     ft_bzero(&data, sizeof(t_data));
     mrt_vars_init(&data.vars);

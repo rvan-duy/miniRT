@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/06 18:46:03 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/06 18:49:40 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,7 @@ clean:
 	@/bin/rm -f math/*.o
 	@/bin/rm -f screenshot/*.o
 	@/bin/rm -f ray/*.o
+	@/bin/rm -f coords/*.o
 	@/bin/rm -f unit_tests/*.o
 	@/bin/rm -f unit_tests/coords_tests/*.o
 
