@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/06 17:44:21 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/06 18:46:03 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS = main.c \
 		color/mrt_color_shade_add.c \
 		color/mrt_color_invert.c \
 		coords/mrt_tuple_create.c \
+		coords/mrt_tuple_compare.c \
 		coords/mrt_point_create.c \
 		coords/mrt_vector_create.c \
 		math/mrt_math_magnitude_calc.c \
@@ -50,7 +51,10 @@ SRCS = main.c \
 		ray/mrt_ray_collision_check.c \
 		ray/mrt_ray_sphere.c \
 		unit_tests/mrt_unit_tests_start.c \
-		unit_tests/mrt_unit_tests_coords.c \
+		unit_tests/coords_tests/mrt_unit_tests_coords.c \
+		unit_tests/coords_tests/mrt_unit_tests_tuple.c \
+		unit_tests/coords_tests/mrt_unit_tests_vector.c \
+		unit_tests/coords_tests/mrt_unit_tests_point.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
@@ -86,6 +90,8 @@ clean:
 	@/bin/rm -f math/*.o
 	@/bin/rm -f screenshot/*.o
 	@/bin/rm -f ray/*.o
+	@/bin/rm -f unit_tests/*.o
+	@/bin/rm -f unit_tests/coords_tests/*.o
 
 fclean: clean
 	@/bin/rm -f $(NAME)

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   unit_tests.h                                       :+:    :+:            */
+/*   mrt_tuple_compare.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/05 18:10:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/06 18:30:40 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/06 18:31:16 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/06 18:49:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UNIT_TESTS_H
-# define UNIT_TESTS_H
+#include "../includes/coords.h"
 
-void    mrt_unit_tests_start();
-void    mrt_unit_tests_coords();
-void    mrt_unit_tests_tuple();
-void    mrt_unit_tests_point();
-void    mrt_unit_tests_vector();
-
-#endif
+int mrt_tuple_compare(t_tuple *t1, t_tuple *t2)
+{
+    if (t1->x - t2->x < 0.0001 && \
+        t1->y - t2->y < 0.0001 && \
+        t1->z - t2->z < 0.0001 && \
+        t1->w - t2->w < 0.0001)
+        return (1);
+    return (0);
+}
