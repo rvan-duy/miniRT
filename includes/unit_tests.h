@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 18:10:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 18:48:26 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 19:19:42 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void    mrt_unit_tests_tuple_negate();
 void    mrt_unit_tests_tuple_scale();
 void    mrt_unit_tests_magnitude();
 void    mrt_unit_tests_tuple_normalize();
+void    mrt_unit_tests_dot_product();
 
 #endif

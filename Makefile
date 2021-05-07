@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/07 18:41:08 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/07 19:17:24 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRCS = main.c \
 		coords/mrt_tuple_magnitude.c \
 		coords/mrt_double_compare.c \
 		coords/mrt_tuple_normalize.c \
+		coords/mrt_tuple_dot_product.c \
 		math/mrt_math_magnitude_calc.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
@@ -69,6 +70,7 @@ SRCS = main.c \
 		unit_tests/coords_tests/mrt_unit_tests_magnitude.c \
 		unit_tests/coords_tests/mrt_unit_tests_double.c \
 		unit_tests/coords_tests/mrt_unit_tests_tuple_normalize.c \
+		unit_tests/coords_tests/mrt_unit_tests_dot_product.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function

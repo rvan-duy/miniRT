@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 17:32:21 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 17:53:35 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 19:18:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void		mrt_tuple_negate(t_tuple *src);
 void		mrt_tuple_scale(t_tuple *src, double scale);
 double		mrt_tuple_magnitude(t_tuple *src);
 void		mrt_tuple_normalize(t_tuple *src);
+double		mrt_tuple_dot_product(t_tuple *t1, t_tuple *t2);
 
 #endif
