@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/06 18:49:40 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/07 13:55:28 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,9 @@ SRCS = main.c \
 		coords/mrt_tuple_compare.c \
 		coords/mrt_point_create.c \
 		coords/mrt_vector_create.c \
+		coords/mrt_tuple_add.c \
+		coords/mrt_tuple_subtract.c \
+		coords/mrt_tuple_negate.c \
 		math/mrt_math_magnitude_calc.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
@@ -55,6 +58,9 @@ SRCS = main.c \
 		unit_tests/coords_tests/mrt_unit_tests_tuple.c \
 		unit_tests/coords_tests/mrt_unit_tests_vector.c \
 		unit_tests/coords_tests/mrt_unit_tests_point.c \
+		unit_tests/coords_tests/mrt_unit_tests_tuple_add.c \
+		unit_tests/coords_tests/mrt_unit_tests_tuple_subtract.c \
+		unit_tests/coords_tests/mrt_unit_tests_tuple_negate.c \
 		mrt_events.c
 FLAGS = -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
@@ -65,20 +71,20 @@ LIBFT = libft.a
 all: $(NAME)
 
 #MacOS
-#%.o: %.c
-#$(CC) $(UNUSED) -Imlx -c $< -o $@
-
-#Linux
 %.o: %.c
-	$(CC) $(UNUSED) -c $< -o $@
+	$(CC) $(UNUSED) -Imlx -c $< -o $@
 
 #Linux
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+#%.o: %.c
+#$(CC) $(UNUSED) -c $< -o $@
+
+#Linux
+#$(NAME): $(OBJ)
+#$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 
 #MacOS
-#$(NAME): $(OBJ)
-#$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	@/bin/rm -f *.o

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_tuple_compare.c                                :+:    :+:            */
+/*   mrt_tuple_add.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/06 18:31:16 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 13:08:39 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/07 12:53:44 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/07 13:30:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/coords.h"
+#include "../includes/error_msg.h"
 
-int mrt_tuple_compare(t_tuple *dst, t_tuple *src)
+// Function adds tuple src to dst
+void	mrt_tuple_add(t_tuple *dst, t_tuple *src)
 {
-    if (dst->x - src->x < 0.00001 && \
-        dst->y - src->y < 0.00001 && \
-        dst->z - src->z < 0.00001 && \
-        dst->w - src->w < 0.00001)
-        return (1);
-    return (0);
+	if (dst->w >= 1 && src->w >= 1)
+		mrt_error_msg(0, "Cannot add a point to a point");
+	dst->x += src->x;
+	dst->y += src->y;
+	dst->z += src->z;
+	dst->w += src->w;
+	return ;
 }

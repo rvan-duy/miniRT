@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/04 18:02:23 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 12:44:54 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ void    mrt_ray_shoot(t_data *data)
         x = 0;
         while (x < data->vars.res.width)
         {
-            ray_vars.u = ((double)x + 0.5) / (data->vars.res.width - 1) * 0.9;
-            ray_vars.v = ((double)y + 0.5) / (data->vars.res.height - 1) * 0.9;
+            ray_vars.u = ((double)x + 0.5) / (data->vars.res.width - 1);
+            ray_vars.v = ((double)y + 0.5) / (data->vars.res.height - 1);
             ray.direction = mrt_ray_direction_calc(&ray, &ray_vars);
             //mrt_print_coords(ray.direction, "ray");
             //printf("x:%d y:%d\n", x, y);
@@ -91,7 +91,7 @@ void    mrt_ray_shoot(t_data *data)
             //mrt_print_coords(ray.origin, "origin");
             if (mrt_ray_collision_check(&ray, &data->vars) >= 0)
             {
-                mrt_color_shade_add(0.0001, &color);
+                //mrt_color_shade_add(0.0001, &color);
                 if (color == 0)
                     color = 0xFFFFFF;
                 //p("%X\n", color);
