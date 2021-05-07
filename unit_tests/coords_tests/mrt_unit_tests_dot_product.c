@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/07 19:12:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 19:21:03 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 19:21:42 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ void        mrt_unit_tests_dot_product()
     tuple_test_1();
     tuple_test_2();
     printf("\n\e[0m");
-    return ;    
+    return ;
 }
