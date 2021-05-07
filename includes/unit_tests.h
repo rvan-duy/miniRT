@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 18:10:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 14:18:18 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 18:48:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void    mrt_unit_tests_start();
 void    mrt_unit_tests_coords();
+void    mrt_unit_tests_double();
 void    mrt_unit_tests_tuple();
 void    mrt_unit_tests_point();
 void    mrt_unit_tests_vector();
@@ -22,5 +23,7 @@ void    mrt_unit_tests_tuple_add();
 void    mrt_unit_tests_tuple_subtract();
 void    mrt_unit_tests_tuple_negate();
 void    mrt_unit_tests_tuple_scale();
+void    mrt_unit_tests_magnitude();
+void    mrt_unit_tests_tuple_normalize();
 
 #endif

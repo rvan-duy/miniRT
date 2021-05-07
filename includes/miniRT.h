@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:13:32 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/04/27 11:13:00 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 18:24:58 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define RAY_LEN_MIN 0
 # define VIEWPORT_HEIGTH 2.0
 # define FOCAL_LEN 1.0
+# define EPSILON 0.00001
 
 // X11 Events
 # define KeyPress 2

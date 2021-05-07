@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/06 18:14:24 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/06 18:47:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 18:20:47 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,27 @@ static void tuple_test_4()
     return ;
 }
 
+static void tuple_test_5()
+{
+    t_tuple *t1;
+    t_tuple *t2;
+
+    t1 = malloc(sizeof(t_tuple));
+    if (!t1)
+        mrt_error_msg(0, "Unable to allocate memory");
+    t1->x = 1.2;
+    t1->y = 3.4;
+    t1->z = -4.500000001;
+    t1->w = 1.0;
+    t2 = mrt_tuple_create(0, t1->y, t1->z, t1->w);
+    if (!mrt_tuple_compare(t2, t1))
+        printf("\x1B[32m[OK] ");
+    else
+        printf("\x1B[31m[KO] ");
+    free(t1);
+    return ;
+}
+
 void        mrt_unit_tests_tuple()
 {
     printf("mrt_tuple_create: ");
@@ -109,6 +130,7 @@ void        mrt_unit_tests_tuple()
     printf("\n\e[0m");
     printf("mrt_tuple_compare ");
     tuple_test_4();
+    tuple_test_5();
     printf("\n\e[0m");
     return ;
 }

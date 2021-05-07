@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_tuple_compare.c                                :+:    :+:            */
+/*   mrt_tuple_normalize.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/06 18:31:16 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 18:30:03 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/07 16:38:30 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/07 18:49:02 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/coords.h"
+#include "../includes/error_msg.h"
 
-int mrt_tuple_compare(t_tuple *dst, t_tuple *src)
+// Function normalizes the tuple
+// Tuple has to be a vector (w = 0)
+void    mrt_tuple_normalize(t_tuple *src)
 {
-    if (mrt_double_compare(dst->x, src->x) && \
-        mrt_double_compare(dst->y, src->y) && \
-        mrt_double_compare(dst->z, src->z) && \
-        mrt_double_compare(dst->w, src->w))
-        return (1);
-    return (0);
+    double magnitude;
+    
+    if (!mrt_double_compare(src->w, 0.0))
+		mrt_error_msg(0, "Tuple has to be a vector in \
+order to be normalized");
+    magnitude = mrt_tuple_magnitude(src);
+    src->x /= magnitude;
+    src->y /= magnitude;
+    src->z /= magnitude;
+    return ;
 }

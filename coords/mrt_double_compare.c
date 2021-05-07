@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_tuple_compare.c                                :+:    :+:            */
+/*   mrt_double_compare.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/06 18:31:16 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 18:30:03 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/07 17:40:28 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/07 18:32:14 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/coords.h"
+#include "../includes/miniRT.h"
+#include <math.h>
 
-int mrt_tuple_compare(t_tuple *dst, t_tuple *src)
+int	mrt_double_compare(double x, double y)
 {
-    if (mrt_double_compare(dst->x, src->x) && \
-        mrt_double_compare(dst->y, src->y) && \
-        mrt_double_compare(dst->z, src->z) && \
-        mrt_double_compare(dst->w, src->w))
-        return (1);
-    return (0);
+	if (fabs(x - y) < EPSILON)
+		return (1);
+	return (0);
 }
