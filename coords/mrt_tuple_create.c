@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 17:31:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/06 18:00:14 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/07 14:26:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ t_tuple    *mrt_tuple_create(double x, double y, double z, double w)
 {
     t_tuple    *new_tuple;
 
-    if (w != 1.0 && w != 0.0)
-    {
-        //printf("(%f, %f, %f) ", x, y, z);
-        //printf("Warning: w is not 1.0 or 0.0. Tuple will be set to point type (1.0).\n");
-        w = 1.0;
-    }
     new_tuple = malloc(sizeof(t_tuple));
     if (!new_tuple)
         mrt_error_msg(0, "Unable to allocate memory");

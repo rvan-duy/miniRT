@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_unit_tests_coords.c                            :+:    :+:            */
+/*   mrt_tuple_scale.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/06 17:32:07 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 14:18:08 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/07 14:11:12 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/07 14:22:33 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/unit_tests.h"
-#include <stdio.h>
+#include "../includes/coords.h"
 
-void        mrt_unit_tests_coords()
+void    mrt_tuple_scale(t_tuple *src, double scale)
 {
-    printf("--- Coords Functions Tests ---\n");
-    mrt_unit_tests_tuple();
-    mrt_unit_tests_point();
-    mrt_unit_tests_vector();
-    mrt_unit_tests_tuple_add();
-    mrt_unit_tests_tuple_subtract();
-    mrt_unit_tests_tuple_negate();
-    mrt_unit_tests_tuple_scale();
+    src->x *= scale;
+    src->y *= scale;
+    src->z *= scale;
+    src->w *= scale;
     return ;
 }
