@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/08 16:34:58 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/08 18:41:26 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ SRCS = main.c \
 		unit_tests/coords_tests/mrt_unit_tests_cross_product.c \
 		unit_tests/coords_tests/mrt_unit_tests_tuple_special.c \
 		mrt_events.c
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
 OBJ = $(SRCS:%.c=%.o)
 MLX = libmlx.a
