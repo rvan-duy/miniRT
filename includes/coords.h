@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 17:32:21 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 14:40:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/08 16:17:36 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ typedef struct s_tuple {
 	double	y;
 	double	z;
 	double	w;
-}   t_tuple;
+}	t_tuple;
 
 t_tuple		*mrt_tuple_create(double x, double y, double z, double w);
 t_tuple		*mrt_vector_2_create(double x, double y, double z);

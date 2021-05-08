@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/06 17:32:07 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 14:42:24 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/08 16:33:58 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void        mrt_unit_tests_coords()
     mrt_unit_tests_tuple_normalize();
     mrt_unit_tests_dot_product();
     mrt_unit_tests_cross_product();
+    mrt_unit_tests_tuple_special();
     return ;
 }
