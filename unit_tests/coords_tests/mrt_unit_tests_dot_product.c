@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/07 19:12:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 14:52:02 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/08 17:21:17 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void tuple_test_1()
+static void	tuple_test_1(void)
 {
-    t_tuple *t1;
-    t_tuple *t2;
+	t_tuple	*t1;
+	t_tuple	*t2;
 
-    t1 = mrt_vector_2_create(10, 2, 3);
-    t2 = mrt_vector_2_create(1, 2, 3);
-    if (mrt_double_compare(mrt_tuple_dot_product(t1, t2), 23))
-        printf("\x1B[32m[OK] ");
-    else
-        printf("\x1B[31m[KO] ");
-    free(t1);
-    free(t2);
-    return ;
+	t1 = mrt_vector_2_create(10, 2, 3);
+	t2 = mrt_vector_2_create(1, 2, 3);
+	if (mrt_double_compare(mrt_tuple_dot_product(t1, t2), 23))
+		printf("\x1B[32m[OK] ");
+	else
+		printf("\x1B[31m[KO] ");
+	free(t1);
+	free(t2);
+	return ;
 }
 
-static void tuple_test_2()
+static void	tuple_test_2(void)
 {
-    t_tuple *t1;
-    t_tuple *t2;
+	t_tuple	*t1;
+	t_tuple	*t2;
 
-    t1 = mrt_vector_2_create(1, 2, 3);
-    t2 = mrt_vector_2_create(2, 3, 4);
-    if (mrt_double_compare(mrt_tuple_dot_product(t1, t2), 20))
-        printf("\x1B[32m[OK] ");
-    else
-        printf("\x1B[31m[KO] ");
-    free(t1);
-    free(t2);
-    return ;
+	t1 = mrt_vector_2_create(1, 2, 3);
+	t2 = mrt_vector_2_create(2, 3, 4);
+	if (mrt_double_compare(mrt_tuple_dot_product(t1, t2), 20))
+		printf("\x1B[32m[OK] ");
+	else
+		printf("\x1B[31m[KO] ");
+	free(t1);
+	free(t2);
+	return ;
 }
 
-static void tuple_test_3()
+static void	tuple_test_3(void)
 {
-    t_tuple *t1;
-    t_tuple *t2;
+	t_tuple	*t1;
+	t_tuple	*t2;
 
-    t1 = mrt_vector_2_create(100, 200, 300);
-    t2 = mrt_vector_2_create(200, 300, 400);
-    if (mrt_double_compare(mrt_tuple_dot_product(t1, t2), 200000))
-        printf("\x1B[32m[OK] ");
-    else
-        printf("\x1B[31m[KO] ");
-    free(t1);
-    free(t2);
-    return ;
+	t1 = mrt_vector_2_create(100, 200, 300);
+	t2 = mrt_vector_2_create(200, 300, 400);
+	if (mrt_double_compare(mrt_tuple_dot_product(t1, t2), 200000))
+		printf("\x1B[32m[OK] ");
+	else
+		printf("\x1B[31m[KO] ");
+	free(t1);
+	free(t2);
+	return ;
 }
 
-void        mrt_unit_tests_dot_product()
+void	mrt_unit_tests_dot_product(void)
 {
-    printf("mrt_tuple_dot_product ");
-    tuple_test_1();
-    tuple_test_2();
-    tuple_test_3();
-    printf("\n\e[0m");
-    return ;
+	printf("mrt_tuple_dot_product ");
+	tuple_test_1();
+	tuple_test_2();
+	tuple_test_3();
+	printf("\n\e[0m");
+	return ;
 }
