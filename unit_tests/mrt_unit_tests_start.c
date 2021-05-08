@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 18:04:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 17:26:22 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/08 18:30:27 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,5 @@
 void    mrt_unit_tests_start()
 {
     mrt_unit_tests_coords();
-    while (1);
-    exit(0);
-    return ;
+    exit(1);
 }

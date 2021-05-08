@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/08 15:57:07 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 17:12:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/08 18:32:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ static void	free_all(t_projectile *p, t_environment *e)
 	free(e);
 }
 
+// this leaks idk why
 static void	special_test_1(void)
 {
 	t_projectile	*p;
