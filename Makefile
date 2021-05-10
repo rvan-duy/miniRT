@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/10 12:57:55 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/10 16:19:40 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ SRCS = main.c \
 		error_msg/mrt_error_msg.c \
 		struct_init/mrt_vars_init.c \
 		color/mrt_color_get.c \
+		color/mrt_color_rgb_create.c \
+		color/mrt_color_to_percent.c \
 		color/mrt_color_shade_add.c \
 		color/mrt_color_invert.c \
 		coords/mrt_tuple_create.c \
@@ -77,6 +79,7 @@ SRCS = main.c \
 		unit_tests/color_tests/mrt_unit_tests_color.c \
 		unit_tests/color_tests/mrt_unit_tests_color_create.c \
 		unit_tests/color_tests/mrt_unit_tests_color_get.c \
+		unit_tests/color_tests/mrt_unit_tests_color_percent.c \
 		mrt_events.c
 FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
@@ -86,21 +89,23 @@ LIBFT = libft.a
 
 all: $(NAME)
 
+ifeq ($(shell uname), Darwin)
 #MacOS
 %.o: %.c
 	$(CC) $(UNUSED) -Imlx -c $< -o $@
 
-#Linux
-#%.o: %.c
-#$(CC) $(UNUSED) -c $< -o $@
-
-#Linux
-#$(NAME): $(OBJ)
-#$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
-
-#MacOS
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+
+else
+#Linux
+%.o: %.c
+	$(CC) $(UNUSED) -c $< -o $@
+
+#Linux
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -Lmlx_linux -Llibft -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+endif
 
 clean:
 	@/bin/rm -f *.o
@@ -115,6 +120,7 @@ clean:
 	@/bin/rm -f coords/*.o
 	@/bin/rm -f unit_tests/*.o
 	@/bin/rm -f unit_tests/coords_tests/*.o
+	@/bin/rm -f unit_tests/color_tests/*.o
 
 fclean: clean
 	@/bin/rm -f $(NAME)

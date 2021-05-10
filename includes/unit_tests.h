@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 18:10:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/10 12:56:43 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/10 16:04:49 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	mrt_unit_tests_tuple_special(void);
 void	mrt_unit_tests_color(void);
 void	mrt_unit_tests_color_create(void);
 void	mrt_unit_tests_color_get(void);
+void	mrt_unit_tests_color_percent(void);
 
 #endif

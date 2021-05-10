@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_double_compare.c                               :+:    :+:            */
+/*   mrt_color_rgb_create.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/07 17:40:28 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/10 17:34:35 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/10 13:52:11 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/10 13:52:16 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/miniRT.h"
-#include <math.h>
-
-// Function compares two doubles
-int	mrt_double_compare(double x, double y)
+int	mrt_color_rgb_create(int r, int g, int b)
 {
-	if (fabs(x - y) < EPSILON)
-		return (1);
-	return (0);
+	if (r > 255 || g > 255 || b > 255)
+		return (0);
+	return (r << 16 | g << 8 | b);
 }

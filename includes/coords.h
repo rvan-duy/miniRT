@@ -6,12 +6,17 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 17:32:21 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 16:17:36 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/10 14:23:47 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COORDS_H
 # define COORDS_H
+
+// 3 Types of tuple:
+// vector (w = 0)
+// color (w = 0)
+// point (w = 1)
 
 typedef struct s_tuple {
 	double	x;

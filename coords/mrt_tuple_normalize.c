@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/07 16:38:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 18:13:01 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/10 14:07:30 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ order to be normalized");
 	src->x /= magnitude;
 	src->y /= magnitude;
 	src->z /= magnitude;
-	return ;
 }

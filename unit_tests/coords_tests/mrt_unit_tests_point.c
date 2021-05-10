@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/06 18:43:34 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 18:21:59 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/10 15:46:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static void	point_test(void)
 		printf("\x1B[31m[KO] ");
 	free(t1);
 	free(t2);
-	return ;
 }
 
 void	mrt_unit_tests_point(void)
@@ -42,5 +41,4 @@ void	mrt_unit_tests_point(void)
 	printf("mrt_point_create: ");
 	point_test();
 	printf("\n\e[0m");
-	return ;
 }
