@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/08 15:57:07 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 18:42:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/10 18:33:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/coords.h"
-#include "../includes/error_msg.h"
-#include "../includes/libft.h"
+#include "../../includes/coords.h"
+#include "../../includes/error_msg.h"
+#include "../../includes/libft.h"
 #include <stdio.h>
 
 // These tests calculate the distance a projectile

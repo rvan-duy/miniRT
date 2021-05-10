@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/10 16:19:40 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/10 18:37:49 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ ifeq ($(shell uname), Darwin)
 	$(CC) $(UNUSED) -Imlx -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 else
 #Linux

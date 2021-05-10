@@ -6,12 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/10 15:41:24 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/10 17:58:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/10 18:33:41 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/color.h"
-#include "../includes/coords.h"
+#include "../../includes/color.h"
+#include "../../includes/coords.h"
 #include <stdio.h>
 #include <stdlib.h>
 
