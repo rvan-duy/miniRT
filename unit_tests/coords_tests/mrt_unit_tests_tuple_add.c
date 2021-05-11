@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/07 13:02:48 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/08 18:23:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/11 14:49:25 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static void	tuple_test_1(void)
 	free(t1);
 	free(t2);
 	free(t3);
-	return ;
 }
 
 static void	tuple_test_2(void)
@@ -52,7 +51,6 @@ static void	tuple_test_2(void)
 	free(t1);
 	free(t2);
 	free(t3);
-	return ;
 }
 
 void	mrt_unit_tests_tuple_add(void)
@@ -61,5 +59,4 @@ void	mrt_unit_tests_tuple_add(void)
 	tuple_test_1();
 	tuple_test_2();
 	printf("\n\e[0m");
-	return ;
 }

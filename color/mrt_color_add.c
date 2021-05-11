@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_tuple_scale.c                                  :+:    :+:            */
+/*   mrt_color_add.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/07 14:11:12 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/11 14:54:48 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/11 14:07:30 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/11 14:43:49 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/coords.h"
+#include "../includes/color.h"
 
-// Function scales a tuple
-void	mrt_tuple_scale(t_tuple *src, double scale)
+void	mrt_color_add(t_rgb_percent *dst, t_rgb_percent *src)
 {
-	src->x *= scale;
-	src->y *= scale;
-	src->z *= scale;
-	src->w *= scale;
+	dst->r += src->r;
+	dst->g += src->g;
+	dst->b += src->b;
 }

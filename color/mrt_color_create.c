@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_tuple_create.c                                 :+:    :+:            */
+/*   mrt_color_create.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/05 17:31:59 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/11 14:41:11 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/11 14:36:54 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/11 14:46:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/coords.h"
+#include "../includes/color.h"
 #include "../includes/error_msg.h"
 #include <stdlib.h>
 
-// Function creates a tuple, w is used to check the type of tuple:
-// w = 1.0 means tuple is a point (default)
-// w = 0.0 means tuple is a vector
-t_tuple	*mrt_tuple_create(double x, double y, double z, double w)
+// Function returns a rgb_percent struct
+t_rgb_percent	*mrt_color_percent_create(double r, double g, double b)
 {
-	t_tuple	*new_tuple;
+	t_rgb_percent	*new_rgb_percent;
 
-	new_tuple = malloc(sizeof(t_tuple));
-	if (!new_tuple)
+	new_rgb_percent = malloc(sizeof(t_rgb_percent));
+	if (!new_rgb_percent)
 		mrt_error_msg(0, "Unable to allocate memory");
-	new_tuple->x = x;
-	new_tuple->y = y;
-	new_tuple->z = z;
-	new_tuple->w = w;
-	return (new_tuple);
+	new_rgb_percent->r = r;
+	new_rgb_percent->g = g;
+	new_rgb_percent->b = b;
+	return (new_rgb_percent);
 }

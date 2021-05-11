@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/10 15:41:24 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/10 18:33:41 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/11 14:47:10 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	test_color(double red, double green, double blue, int rgb)
 	t_rgb_percent	*color;
 
 	color = mrt_color_to_percent(rgb);
-	if (mrt_double_compare(red, color->x) && \
-		mrt_double_compare(green, color->y) && \
-		mrt_double_compare(blue, color->z))
+	if (mrt_double_compare(red, color->r) && \
+		mrt_double_compare(green, color->g) && \
+		mrt_double_compare(blue, color->b))
 		printf("\x1B[32m[OK] ");
 	else
 		printf("\x1B[31m[KO] ");
