@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/26 15:20:25 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/07 12:44:54 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/11 17:00:04 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,9 @@ void    mrt_ray_shoot(t_data *data)
 
 int mrt_frame_render(t_data *data)
 {
-    mrt_ray_shoot(data);
+    //mrt_ray_shoot(data);
     //mrt_draw_shade(v, 0xFFFFFF);
+    mrt_shooting_projectile(data);
     mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
     return (1);
 }

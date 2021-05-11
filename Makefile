@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/11 15:59:24 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/11 16:53:16 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,8 @@ SRCS = main.c \
 		unit_tests/color_tests/mrt_unit_tests_color_substract.c \
 		unit_tests/color_tests/mrt_unit_tests_color_scale.c \
 		unit_tests/color_tests/mrt_unit_tests_color_multiply.c \
-		mrt_events.c
+		mrt_events.c \
+		mrt_shooting_projectile.c
 FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
 UNUSED  = -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function
 OBJ = $(SRCS:%.c=%.o)
