@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   mrt_matrix_print.c                                 :+:    :+:            */
+/*   mrt_matrix_compare.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/05/11 18:51:51 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/12 16:07:23 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/05/12 16:09:30 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/05/12 16:14:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../includes/coords.h"
 
-// Function prints a matrix of doubles for r rows and c columns
-void	mrt_matrix_print(double **matrix, int row, int col)
+// Function compares two matrices
+// 1 if matrix1 == matrix2
+// 2 if matrix1 != matrix2
+int	mrt_matrix_compare(double **matrix1, double **matrix2, int row, int col)
 {
-	int	row;
-	int	col;
+	int	saved_col;
 
-	row = 0;
-	while (row < 4)
+	saved_col = col;
+	while (row > 0)
 	{
-		col = 0;
-		printf("|");
-		while (col < 4)
+		col = saved_col;
+		while (col > 0)
 		{
-			printf(" %.2f |", matrix[row][col]);
-			col++;
+			if (!mrt_double_compare(matrix1[row][col], matrix1[row][col]))
+				return (0);
+			col--;
 		}
-		printf("\n");
-		row++;
+		row--;
 	}
+	return (1);
 }

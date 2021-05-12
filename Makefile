@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/12 15:10:30 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/12 16:07:52 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRCS = main.c \
 		matrix/mrt_matrix_create.c \
 		matrix/mrt_matrix_free.c \
 		matrix/mrt_matrix_row_insert.c \
+		matrix/mrt_matrix_print.c \
 		math/mrt_math_magnitude_calc.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
