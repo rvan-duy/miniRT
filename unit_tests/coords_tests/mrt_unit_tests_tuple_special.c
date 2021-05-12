@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/08 15:57:07 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/10 18:33:07 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/12 14:52:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static void	tick(t_projectile *p, t_environment *e)
 	mrt_tuple_add(p->position, p->velocity);
 }
 
-static void	*calloc_and_protect(void *pointer)
+static void	*calloc_and_protect(void *pointer, size_t size)
 {
-	pointer = ft_calloc(1, sizeof(pointer));
+	pointer = ft_calloc(1, size);
 	if (!pointer)
 		mrt_error_msg(0, "Unable to allocate memory");
 	return (pointer);
@@ -60,8 +60,8 @@ static void	special_test_1(void)
 	t_environment	*e;
 	int				i;
 
-	p = calloc_and_protect(p);
-	e = calloc_and_protect(e);
+	p = calloc_and_protect(p, sizeof(t_projectile));
+	e = calloc_and_protect(e, sizeof(t_environment));
 	p->position = mrt_point_create(0, 1, 0);
 	p->velocity = mrt_vector_2_create(1, 1, 0);
 	e->gravity = mrt_vector_2_create(0, -0.1, 0);

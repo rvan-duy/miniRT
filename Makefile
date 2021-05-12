@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/24 10:55:49 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/05/11 16:53:16 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/05/12 15:10:30 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,9 @@ SRCS = main.c \
 		coords/mrt_tuple_normalize.c \
 		coords/mrt_tuple_dot_product.c \
 		coords/mrt_tuple_cross_product.c \
+		matrix/mrt_matrix_create.c \
+		matrix/mrt_matrix_free.c \
+		matrix/mrt_matrix_row_insert.c \
 		math/mrt_math_magnitude_calc.c \
 		math/mrt_math_norm_vector_calc.c \
 		math/mrt_math_utils_1.c \
@@ -92,6 +95,9 @@ SRCS = main.c \
 		unit_tests/color_tests/mrt_unit_tests_color_substract.c \
 		unit_tests/color_tests/mrt_unit_tests_color_scale.c \
 		unit_tests/color_tests/mrt_unit_tests_color_multiply.c \
+		unit_tests/matrix_tests/mrt_unit_tests_matrix.c \
+		unit_tests/matrix_tests/mrt_unit_tests_matrix_create.c \
+		unit_tests/matrix_tests/mrt_unit_tests_matrix_insert.c \
 		mrt_events.c \
 		mrt_shooting_projectile.c
 FLAGS = -g -fsanitize=address -Wall -Wextra -Werror
@@ -105,7 +111,7 @@ all: $(NAME)
 ifeq ($(shell uname), Darwin)
 #MacOS
 %.o: %.c
-	$(CC) $(UNUSED) -Imlx -c $< -o $@
+	$(CC) -g -fsanitize=address $(UNUSED) -Imlx -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
@@ -127,6 +133,7 @@ clean:
 	@/bin/rm -f struct_init/*.o
 	@/bin/rm -f print/*.o
 	@/bin/rm -f color/*.o
+	@/bin/rm -f matrix/*.o
 	@/bin/rm -f math/*.o
 	@/bin/rm -f screenshot/*.o
 	@/bin/rm -f ray/*.o
@@ -134,6 +141,7 @@ clean:
 	@/bin/rm -f unit_tests/*.o
 	@/bin/rm -f unit_tests/coords_tests/*.o
 	@/bin/rm -f unit_tests/color_tests/*.o
+	@/bin/rm -f unit_tests/matrix_tests/*.o
 
 fclean: clean
 	@/bin/rm -f $(NAME)

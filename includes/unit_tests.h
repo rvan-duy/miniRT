@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/05 18:10:40 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/05/11 16:04:45 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/05/12 15:09:50 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,10 @@ void	mrt_unit_tests_color_add(void);
 void	mrt_unit_tests_color_substract(void);
 void	mrt_unit_tests_color_scale(void);
 void	mrt_unit_tests_color_multiply(void);
+
+// Matrix tests
+void	mrt_unit_tests_matrix(void);
+void	mrt_unit_tests_matrix_create(void);
+void	mrt_unit_tests_matrix_insert(void);
 
 #endif
